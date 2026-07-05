@@ -20,12 +20,7 @@ from collections import Counter
 from pathlib import Path
 
 
-PLUGIN_ROOT = Path(__file__).resolve().parents[1]
-REPO_ROOT = PLUGIN_ROOT
-SKILLS_ROOT = PLUGIN_ROOT / "skills"
-PLUGIN_JSON = PLUGIN_ROOT / ".codex-plugin" / "plugin.json"
-MANIFEST_JSON = PLUGIN_ROOT / "skills-manifest.json"
-COMPAT_JSON = PLUGIN_ROOT / "codex-compatibility.json"
+DEFAULT_PLUGIN_ROOT = Path(__file__).resolve().parents[1]
 
 FORBIDDEN_DEFAULT_SKILL_PREFIXES = (
     "tilelang2ascend-",
@@ -46,6 +41,13 @@ def load_json(path: Path) -> dict:
         raise AssertionError(f"invalid json {path}: {exc}") from exc
 
 
+def rel(path: Path, root: Path) -> str:
+    try:
+        return str(path.relative_to(root))
+    except ValueError:
+        return str(path)
+
+
 def parse_name(path: Path) -> str:
     text = path.read_text(encoding="utf-8", errors="replace")
     match = re.match(r"^---\n(.*?)\n---\n", text, re.S)
@@ -57,38 +59,54 @@ def parse_name(path: Path) -> str:
     raise AssertionError(f"missing name in frontmatter: {path}")
 
 
-def main() -> int:
-    parser = argparse.ArgumentParser()
-    parser.add_argument("--expected-name", default="codex-cannbot")
-    args = parser.parse_args()
-
+def validate_plugin(plugin_root: Path, expected_name: str) -> tuple[list[str], dict[str, object] | None]:
+    plugin_root = plugin_root.resolve()
+    skills_root = plugin_root / "skills"
+    plugin_json = plugin_root / ".codex-plugin" / "plugin.json"
+    manifest_json = plugin_root / "skills-manifest.json"
+    compat_json = plugin_root / "codex-compatibility.json"
     findings: list[str] = []
-    for path in [PLUGIN_JSON, MANIFEST_JSON, COMPAT_JSON]:
+    for path in [plugin_json, manifest_json, compat_json]:
         if not path.exists():
-            findings.append(f"missing file: {path.relative_to(REPO_ROOT)}")
+            findings.append(f"missing file: {rel(path, plugin_root)}")
 
     if findings:
-        for finding in findings:
-            print(f"ERROR: {finding}")
-        return 1
+        return findings, None
 
-    plugin = load_json(PLUGIN_JSON)
-    manifest = load_json(MANIFEST_JSON)
-    compat = load_json(COMPAT_JSON)
+    try:
+        plugin = load_json(plugin_json)
+        manifest = load_json(manifest_json)
+        compat = load_json(compat_json)
+    except AssertionError as exc:
+        return [str(exc)], None
 
-    if plugin.get("name") != args.expected_name:
-        findings.append(f"plugin name must be {args.expected_name}")
+    if plugin.get("name") != expected_name:
+        findings.append(f"plugin name must be {expected_name}")
     if plugin.get("skills") != "./skills/":
         findings.append("plugin skills path must be ./skills/")
 
-    skill_files = sorted(SKILLS_ROOT.rglob("SKILL.md"))
-    names = [parse_name(path) for path in skill_files]
+    skill_files = sorted(skills_root.rglob("SKILL.md"))
+    names: list[str] = []
+    for path in skill_files:
+        try:
+            names.append(parse_name(path))
+        except AssertionError as exc:
+            findings.append(str(exc))
     duplicates = [name for name, count in Counter(names).items() if count > 1]
     if duplicates:
         findings.append(f"duplicate skill names: {duplicates}")
 
-    manifest_names = sorted(item["name"] for item in manifest.get("skills", []))
-    if sorted(names) != manifest_names:
+    manifest_items = manifest.get("skills", [])
+    if not isinstance(manifest_items, list):
+        findings.append("manifest skills must be a list")
+        manifest_items = []
+    manifest_names: list[str] = []
+    for index, item in enumerate(manifest_items):
+        if not isinstance(item, dict) or not isinstance(item.get("name"), str):
+            findings.append(f"manifest skill item {index} must include a string name")
+            continue
+        manifest_names.append(item["name"])
+    if sorted(names) != sorted(manifest_names):
         findings.append("manifest skill list does not match generated SKILL.md files")
 
     official = manifest.get("officialMarketplace", {})
@@ -99,35 +117,72 @@ def main() -> int:
         if name.startswith(FORBIDDEN_DEFAULT_SKILL_PREFIXES):
             findings.append(f"default bundle contains excluded workflow/experimental skill: {name}")
 
-    for path in SKILLS_ROOT.rglob("*"):
+    for path in skills_root.rglob("*"):
         if not path.is_file() or path.suffix.lower() not in {".md", ".py", ".sh", ".txt"}:
             continue
         text = path.read_text(encoding="utf-8", errors="replace")
         for token in FORBIDDEN_TEXT:
             if token in text:
-                findings.append(f"non-Codex path token {token!r} remains in {path.relative_to(REPO_ROOT)}")
+                findings.append(f"non-Codex path token {token!r} remains in {rel(path, plugin_root)}")
 
     support_counts = compat.get("supportCounts", {})
+    compat_items = compat.get("skills", [])
+    if not isinstance(compat_items, list):
+        findings.append("compatibility skills must be a list")
+        compat_items = []
+    computed_support_counts = Counter()
+    compat_names: list[str] = []
+    for index, item in enumerate(compat_items):
+        if not isinstance(item, dict):
+            findings.append(f"compatibility skill item {index} must be an object")
+            continue
+        name = item.get("name")
+        support = item.get("codexSupport")
+        if not isinstance(name, str):
+            findings.append(f"compatibility skill item {index} must include a string name")
+            continue
+        compat_names.append(name)
+        if isinstance(support, str):
+            computed_support_counts[support] += 1
+        else:
+            findings.append(f"compatibility skill {name} must include codexSupport")
+    if dict(computed_support_counts) != support_counts:
+        findings.append(
+            f"compatibility supportCounts do not match skills: expected {dict(computed_support_counts)}, got {support_counts}"
+        )
+    if sorted(compat_names) != sorted(names):
+        findings.append("compatibility skill list does not match generated SKILL.md files")
     if support_counts.get("needs-review"):
         findings.append(f"compatibility contains needs-review skills: {support_counts}")
 
-    if findings:
-        for finding in findings:
-            print(f"ERROR: {finding}")
-        return 1
-
-    print(json.dumps({
-        "plugin": plugin["name"],
+    payload = {
+        "plugin": plugin.get("name"),
         "version": plugin.get("version"),
         "skillFiles": len(skill_files),
         "uniqueSkillNames": len(set(names)),
         "supportCounts": support_counts,
         "unpackagedOfficialSkills": [
             item["name"]
-            for item in manifest.get("skills", [])
-            if not item.get("officialSkillPackages")
+            for item in manifest_items
+            if isinstance(item, dict) and isinstance(item.get("name"), str) and not item.get("officialSkillPackages")
         ],
-    }, ensure_ascii=False, indent=2))
+    }
+    return findings, payload
+
+
+def main() -> int:
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--expected-name", default="codex-cannbot")
+    parser.add_argument("--plugin-root", default=str(DEFAULT_PLUGIN_ROOT))
+    args = parser.parse_args()
+
+    findings, payload = validate_plugin(Path(args.plugin_root), args.expected_name)
+    if findings:
+        for finding in findings:
+            print(f"ERROR: {finding}")
+        return 1
+
+    print(json.dumps(payload, ensure_ascii=False, indent=2))
     return 0
 
 

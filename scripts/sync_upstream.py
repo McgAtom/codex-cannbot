@@ -13,6 +13,7 @@ import json
 import re
 import shutil
 import subprocess
+from json import JSONDecodeError
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -26,6 +27,7 @@ ADAPTER_MARKER_KEY = "x-codex-adapter"
 
 DEFAULT_SOURCE_ROOTS = ("ops", "model", "graph", "infra", "runtime")
 EXPERIMENTAL_ROOTS = ("ops-lab",)
+CODEX_COMMUNITY_SKILLS_ROOT = Path("plugins-community/codex-cannbot/skills")
 TEXT_EXTENSIONS = {".md", ".py", ".sh", ".txt", ".yaml", ".yml", ".json"}
 FORBIDDEN_PATH_REPLACEMENTS = (
     (".opencode/skills/tilelang-env-check/", "<SKILL_DIR>/"),
@@ -107,7 +109,12 @@ def load_official_marketplace(upstream: Path) -> dict[str, object]:
     path = upstream / ".claude-plugin" / "marketplace.json"
     if not path.exists():
         return {"skillPackages": {}, "developmentTeams": {}}
-    raw = json.loads(path.read_text(encoding="utf-8"))
+    try:
+        raw = json.loads(path.read_text(encoding="utf-8"))
+    except JSONDecodeError as exc:
+        raise ValueError(f"invalid official marketplace {path}: {exc}") from exc
+    if not isinstance(raw, dict):
+        raise ValueError(f"invalid official marketplace {path}: root must be an object")
     skill_packages: dict[str, dict[str, object]] = {}
     development_teams: dict[str, dict[str, object]] = {}
     for entry in raw.get("plugins", []):
@@ -146,6 +153,10 @@ def package_index(official: dict[str, object]) -> dict[str, list[str]]:
 
 
 def iter_skill_dirs(upstream: Path, include_experimental: bool) -> list[Path]:
+    codex_skills_root = upstream / CODEX_COMMUNITY_SKILLS_ROOT
+    if codex_skills_root.exists() and any(codex_skills_root.rglob("SKILL.md")):
+        return [skill_md.parent for skill_md in sorted(codex_skills_root.rglob("SKILL.md"))]
+
     roots = list(DEFAULT_SOURCE_ROOTS)
     if include_experimental:
         roots.extend(EXPERIMENTAL_ROOTS)
@@ -259,7 +270,12 @@ def patch_text_files(root: Path) -> int:
 
 
 def local_skill_path(source_path: str) -> Path:
-    parts = Path(source_path).parts
+    path = Path(source_path)
+    try:
+        return path.relative_to(CODEX_COMMUNITY_SKILLS_ROOT)
+    except ValueError:
+        pass
+    parts = path.parts
     if len(parts) <= 1:
         return Path(parts[0])
     return Path(*parts[1:])

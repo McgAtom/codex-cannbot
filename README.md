@@ -54,6 +54,10 @@ For this repository layout, the marketplace entry should point to
 make ci
 ```
 
+`make ci` runs script syntax checks, plugin contract validation, and the unit
+test suite for malformed plugin metadata, upstream sync edge cases, and local
+Codex install smoke behavior.
+
 Expected result:
 
 ```json

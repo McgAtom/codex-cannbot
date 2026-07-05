@@ -1,7 +1,7 @@
 PYTHON ?= python3
 UPSTREAM ?= /tmp/cannbot-skills-update
 
-.PHONY: validate test ci smoke-install reinstall sync-upstream
+.PHONY: validate test check-scripts ci smoke-install reinstall sync-upstream
 
 validate:
 	$(PYTHON) scripts/validate_codex_plugin.py --expected-name cannbot
@@ -9,7 +9,11 @@ validate:
 test:
 	$(PYTHON) -m unittest discover -s tests -v
 
-ci: validate test
+check-scripts:
+	$(PYTHON) -m py_compile scripts/validate_codex_plugin.py scripts/sync_upstream.py
+	bash -n scripts/smoke_install.sh
+
+ci: check-scripts validate test
 
 smoke-install:
 	bash scripts/smoke_install.sh
