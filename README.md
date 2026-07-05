@@ -39,13 +39,13 @@ plugin because Codex needs a separate workflow adapter for those semantics.
 Add the parent directory as a local Codex marketplace and install the plugin:
 
 ```bash
-codex plugin marketplace add local --source-type local --source "$HOME"
+codex plugin marketplace add /Users/mcgatom
 codex plugin add cannbot@local
 codex plugin list
 ```
 
 For this repository layout, the marketplace entry should point to
-`./plugins/cannbot`.
+`./projects/codex-cannbot`.
 
 ## Validate
 
@@ -75,6 +75,7 @@ skills-manifest.json           # generated source and marketplace traceability
 codex-compatibility.json       # Codex compatibility report
 docs/codex-adapter.md          # generated adapter report
 docs/official-plugin-model.md  # official CANNBot model mapped to Codex
+docs/official-plugin-comparison.md
 scripts/validate_codex_plugin.py
 ```
 
