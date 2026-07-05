@@ -1,0 +1,51 @@
+{
+  "name": "cannbot",
+  "version": "2026.07.05-codex.1",
+  "description": "Codex-native CANNBot skills for Ascend NPU development workflows.",
+  "author": {
+    "name": "CANNBot",
+    "url": "https://gitcode.com/cann/cannbot-skills"
+  },
+  "homepage": "https://gitcode.com/cann/cannbot-skills",
+  "repository": "https://gitcode.com/cann/cannbot-skills",
+  "license": "CANN Open Software License Agreement Version 2.0",
+  "keywords": [
+    "cann",
+    "ascend",
+    "ascendc",
+    "pypto",
+    "tilelang",
+    "triton",
+    "torch",
+    "gitcode",
+    "npu"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "CANNBot",
+    "shortDescription": "Codex skills for CANN and Ascend NPU workflows",
+    "longDescription": "Codex-native CANNBot skills for Ascend C operator development, Catlass, PyPTO, TileLang, Triton Ascend, torch.compile npugraph_ex diagnostics, Runtime migration, GitCode collaboration, and NPU model inference/training diagnostics.",
+    "developerName": "CANNBot",
+    "category": "Developer Tools",
+    "capabilities": [
+      "Interactive",
+      "Read",
+      "Write"
+    ],
+    "websiteURL": "https://gitcode.com/cann/cannbot-skills",
+    "defaultPrompt": [
+      "Debug an Ascend C precision issue",
+      "Generate a Triton Ascend operator",
+      "Diagnose NPU model training OOM"
+    ],
+    "brandColor": "#C7000B",
+    "screenshots": []
+  },
+  "x-cannbot": {
+    "source": "generated-from-domain-skills",
+    "upstreamCommit": "7def5becc576de40d0e13b0fddad8345e57540e0",
+    "generatedAt": "2026-07-05T09:40:19.812127+00:00",
+    "localPluginId": "cannbot@local",
+    "upstreamCodexAdapterName": "codex-cannbot"
+  }
+}

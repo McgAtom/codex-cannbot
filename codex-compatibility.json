@@ -1,0 +1,1200 @@
+{
+  "upstreamCommit": "7def5becc576de40d0e13b0fddad8345e57540e0",
+  "generatedAt": "2026-07-05T09:40:19.812362+00:00",
+  "patchStats": {
+    "textFilesPatched": 6
+  },
+  "supportCounts": {
+    "codex-ready": 93
+  },
+  "officialMarketplace": {
+    "path": ".claude-plugin/marketplace.json",
+    "skillPackages": {
+      "ops-direct-invoke-skills": {
+        "source": "./ops",
+        "version": "1.0.4",
+        "skills": [
+          "ascendc-api-best-practices",
+          "ascendc-blaze-best-practice",
+          "ascendc-code-review",
+          "ascendc-crash-debug",
+          "ascendc-direct-invoke-template",
+          "ascendc-docs-search",
+          "ascendc-env-check",
+          "ascendc-precision-debug",
+          "ascendc-regbase-best-practice",
+          "ascendc-runtime-debug",
+          "ascendc-tiling-design",
+          "npu-arch",
+          "ops-precision-standard",
+          "ops-profiling",
+          "torch-ascendc-op-extension"
+        ]
+      },
+      "aiss-tiling-solver": {
+        "source": "./ops",
+        "version": "1.0.0",
+        "skills": [
+          "aiss-tiling-solver"
+        ]
+      },
+      "pypto-op-orchestrator-skills": {
+        "source": "./ops",
+        "version": "1.1.0",
+        "skills": [
+          "pypto-api-explore",
+          "pypto-golden-generate",
+          "pypto-intent-understand",
+          "pypto-op-design",
+          "pypto-op-develop",
+          "pypto-op-perf-tune",
+          "pypto-precision-compare",
+          "pypto-precision-debug"
+        ]
+      },
+      "ops-code-reviewer-skills": {
+        "source": "./ops",
+        "version": "1.1.0",
+        "skills": [
+          "ascendc-code-review",
+          "ascendc-docs-search"
+        ]
+      },
+      "torch-npugraph-ex-skills": {
+        "source": "./graph",
+        "version": "1.0.0",
+        "skills": [
+          "torch-custom-ops-guide",
+          "torch-npugraph-ex-compile-error-diagnosis",
+          "torch-npugraph-ex-dfx-triage",
+          "torch-npugraph-ex-knowledge",
+          "torch-npugraph-ex-runtime-error-diagnosis",
+          "torch-npugraph-ex-template"
+        ]
+      },
+      "model-infer-skills": {
+        "source": "./model",
+        "version": "1.0.0",
+        "skills": [
+          "model-infer-fusion",
+          "model-infer-graph-mode",
+          "model-infer-kvcache",
+          "model-infer-migrator",
+          "model-infer-multi-stream",
+          "model-infer-parallel-analysis",
+          "model-infer-parallel-impl",
+          "model-infer-precision-debug",
+          "model-infer-prefetch",
+          "model-infer-quantization",
+          "model-infer-runtime-debug",
+          "model-infer-superkernel"
+        ]
+      },
+      "model-infer-harmony-skills": {
+        "source": "./model",
+        "version": "1.0.0",
+        "skills": [
+          "model-infer-harmony"
+        ]
+      },
+      "model-train-skills": {
+        "source": "./model",
+        "version": "1.0.0",
+        "skills": [
+          "model-train-accuracy-debug",
+          "model-train-oom-analysis"
+        ]
+      },
+      "tilelang-op-orchestrator-skills": {
+        "source": "./ops",
+        "version": "1.1.0",
+        "skills": [
+          "tilelang-api-best-practices",
+          "tilelang-env-check",
+          "tilelang-op-design",
+          "tilelang-op-develop",
+          "tilelang-op-test-design",
+          "tilelang-perf-optimization",
+          "tilelang-programming-model-guide",
+          "tilelang-review",
+          "tilelang-submodule-pull"
+        ]
+      },
+      "infra-skills": {
+        "source": "./infra",
+        "version": "1.0.0",
+        "skills": [
+          "gitcode-issue-gen",
+          "gitcode-issue-handler",
+          "gitcode-pr-handler",
+          "gitcode-toolkit"
+        ]
+      },
+      "ops-registry-invoke-skills": {
+        "source": "./ops",
+        "version": "1.0.0",
+        "skills": [
+          "ascendc-api-best-practices",
+          "ascendc-blaze-best-practice",
+          "ascendc-code-review",
+          "ascendc-crash-debug",
+          "ascendc-direct-invoke-template",
+          "ascendc-docs-gen",
+          "ascendc-docs-search",
+          "ascendc-env-check",
+          "ascendc-performance-best-practices",
+          "ascendc-precision-debug",
+          "ascendc-regbase-best-practice",
+          "ascendc-registry-invoke-template",
+          "ascendc-runtime-debug",
+          "ascendc-st-design",
+          "ascendc-tiling-design",
+          "ascendc-ut-develop",
+          "npu-arch",
+          "ops-precision-standard",
+          "ops-profiling",
+          "ops-spec-gen"
+        ]
+      },
+      "triton-op-generator-skills": {
+        "source": "./ops",
+        "version": "1.0.0",
+        "skills": [
+          "npu-arch",
+          "triton-latency-optimizer",
+          "triton-op-coding",
+          "triton-op-designer",
+          "triton-op-verifier",
+          "triton-task-extractor"
+        ]
+      },
+      "tilelang2ascend-ops-developer-skills": {
+        "source": "./ops-lab/tilelang-to-ascendc/skills",
+        "version": "1.0.0",
+        "skills": [
+          "tilelang2ascend-case-simplifier",
+          "tilelang2ascend-operator-project-init",
+          "tilelang2ascend-precision-tuning",
+          "tilelang2ascend-tilelang-designer",
+          "tilelang2ascend-trace-recorder",
+          "tilelang2ascend-translator"
+        ]
+      }
+    },
+    "developmentTeams": {
+      "ops-direct-invoke": {
+        "source": "./plugins-official/ops-direct-invoke",
+        "version": "1.2.4",
+        "dependencies": [
+          "ops-direct-invoke-skills",
+          "infra-skills"
+        ]
+      },
+      "ops-direct-invoke-flash": {
+        "source": "./plugins-official/ops-direct-invoke-flash",
+        "version": "1.2.2",
+        "dependencies": [
+          "infra-skills"
+        ]
+      },
+      "ops-registry-invoke": {
+        "source": "./plugins-official/ops-registry-invoke",
+        "version": "1.2.0",
+        "dependencies": [
+          "ops-registry-invoke-skills",
+          "infra-skills"
+        ]
+      },
+      "pypto-op-orchestrator": {
+        "source": "./plugins-official/pypto-op-orchestrator",
+        "version": "1.1.9",
+        "dependencies": [
+          "pypto-op-orchestrator-skills"
+        ]
+      },
+      "ops-code-reviewer": {
+        "source": "./plugins-official/ops-code-reviewer",
+        "version": "1.1.0",
+        "dependencies": [
+          "ops-code-reviewer-skills"
+        ]
+      },
+      "torch-compile": {
+        "source": "./plugins-official/torch-compile",
+        "version": "1.0.4",
+        "dependencies": [
+          "torch-npugraph-ex-skills"
+        ]
+      },
+      "model-infer-optimize": {
+        "source": "./plugins-official/model-infer-optimize",
+        "version": "1.0.3",
+        "dependencies": [
+          "model-infer-skills"
+        ]
+      },
+      "tilelang-op-orchestrator": {
+        "source": "./plugins-official/tilelang-op-orchestrator",
+        "version": "1.1.0",
+        "dependencies": [
+          "tilelang-op-orchestrator-skills"
+        ]
+      },
+      "triton-op-generator": {
+        "source": "./plugins-official/triton-op-generator",
+        "version": "1.0.2",
+        "dependencies": [
+          "triton-op-generator-skills"
+        ]
+      },
+      "ascendc-ops-developer": {
+        "source": "./plugins-community/ascendc-ops-lab-developer",
+        "version": "1.0.0",
+        "dependencies": [
+          "tilelang2ascend-ops-developer-skills"
+        ]
+      }
+    }
+  },
+  "excludedByDefault": [
+    {
+      "name": "tilelang2ascend-*",
+      "sourcePath": "ops-lab/tilelang-to-ascendc/skills",
+      "reason": "ops-lab TileLang-to-AscendC is a multi-phase workflow with remote/container verification assumptions; package it only after a dedicated Codex workflow adapter exists."
+    },
+    {
+      "name": "plugins-official/*",
+      "sourcePath": "plugins-official",
+      "reason": "Official CANNBot teams contain agents/workflows, not standalone Codex skills."
+    },
+    {
+      "name": "plugins-community/*",
+      "sourcePath": "plugins-community",
+      "reason": "Community plugins are handled as separate applications and are not part of the default Codex core bundle."
+    }
+  ],
+  "skills": [
+    {
+      "name": "aiss-tiling-solver",
+      "sourcePath": "ops/aiss-tiling-solver",
+      "officialSkillPackages": [
+        "aiss-tiling-solver"
+      ],
+      "codexSupport": "codex-ready",
+      "notes": [
+        "may install tools or access network; keep user confirmation for mutations",
+        "GitCode API/network/token may be required"
+      ]
+    },
+    {
+      "name": "ascendc-api-best-practices",
+      "sourcePath": "ops/ascendc-api-best-practices",
+      "officialSkillPackages": [
+        "ops-direct-invoke-skills",
+        "ops-registry-invoke-skills"
+      ],
+      "codexSupport": "codex-ready",
+      "notes": []
+    },
+    {
+      "name": "ascendc-blaze-best-practice",
+      "sourcePath": "ops/ascendc-blaze-best-practice",
+      "officialSkillPackages": [
+        "ops-direct-invoke-skills",
+        "ops-registry-invoke-skills"
+      ],
+      "codexSupport": "codex-ready",
+      "notes": [
+        "requires matching Ascend/CANN environment for execution"
+      ]
+    },
+    {
+      "name": "ascendc-code-review",
+      "sourcePath": "ops/ascendc-code-review",
+      "officialSkillPackages": [
+        "ops-code-reviewer-skills",
+        "ops-direct-invoke-skills",
+        "ops-registry-invoke-skills"
+      ],
+      "codexSupport": "codex-ready",
+      "notes": [
+        "GitCode API/network/token may be required"
+      ]
+    },
+    {
+      "name": "ascendc-crash-debug",
+      "sourcePath": "ops/ascendc-crash-debug",
+      "officialSkillPackages": [
+        "ops-direct-invoke-skills",
+        "ops-registry-invoke-skills"
+      ],
+      "codexSupport": "codex-ready",
+      "notes": []
+    },
+    {
+      "name": "ascendc-direct-invoke-template",
+      "sourcePath": "ops/ascendc-direct-invoke-template",
+      "officialSkillPackages": [
+        "ops-direct-invoke-skills",
+        "ops-registry-invoke-skills"
+      ],
+      "codexSupport": "codex-ready",
+      "notes": [
+        "requires matching Ascend/CANN environment for execution",
+        "GitCode API/network/token may be required"
+      ]
+    },
+    {
+      "name": "ascendc-direct-invoke-to-registry-invoke",
+      "sourcePath": "ops/ascendc-direct-invoke-to-registry-invoke",
+      "officialSkillPackages": [],
+      "codexSupport": "codex-ready",
+      "notes": [
+        "requires matching Ascend/CANN environment for execution"
+      ]
+    },
+    {
+      "name": "ascendc-docs-gen",
+      "sourcePath": "ops/ascendc-docs-gen",
+      "officialSkillPackages": [
+        "ops-registry-invoke-skills"
+      ],
+      "codexSupport": "codex-ready",
+      "notes": []
+    },
+    {
+      "name": "ascendc-docs-search",
+      "sourcePath": "ops/ascendc-docs-search",
+      "officialSkillPackages": [
+        "ops-code-reviewer-skills",
+        "ops-direct-invoke-skills",
+        "ops-registry-invoke-skills"
+      ],
+      "codexSupport": "codex-ready",
+      "notes": [
+        "requires matching Ascend/CANN environment for execution",
+        "may install tools or access network; keep user confirmation for mutations"
+      ]
+    },
+    {
+      "name": "ascendc-env-check",
+      "sourcePath": "ops/ascendc-env-check",
+      "officialSkillPackages": [
+        "ops-direct-invoke-skills",
+        "ops-registry-invoke-skills"
+      ],
+      "codexSupport": "codex-ready",
+      "notes": [
+        "requires matching Ascend/CANN environment for execution"
+      ]
+    },
+    {
+      "name": "ascendc-perf-optimize",
+      "sourcePath": "ops/ascendc-perf-optimize",
+      "officialSkillPackages": [],
+      "codexSupport": "codex-ready",
+      "notes": []
+    },
+    {
+      "name": "ascendc-performance-best-practices",
+      "sourcePath": "ops/ascendc-performance-best-practices",
+      "officialSkillPackages": [
+        "ops-registry-invoke-skills"
+      ],
+      "codexSupport": "codex-ready",
+      "notes": []
+    },
+    {
+      "name": "ascendc-precision-debug",
+      "sourcePath": "ops/ascendc-precision-debug",
+      "officialSkillPackages": [
+        "ops-direct-invoke-skills",
+        "ops-registry-invoke-skills"
+      ],
+      "codexSupport": "codex-ready",
+      "notes": []
+    },
+    {
+      "name": "ascendc-regbase-best-practice",
+      "sourcePath": "ops/ascendc-regbase-best-practice",
+      "officialSkillPackages": [
+        "ops-direct-invoke-skills",
+        "ops-registry-invoke-skills"
+      ],
+      "codexSupport": "codex-ready",
+      "notes": []
+    },
+    {
+      "name": "ascendc-registry-invoke-template",
+      "sourcePath": "ops/ascendc-registry-invoke-template",
+      "officialSkillPackages": [
+        "ops-registry-invoke-skills"
+      ],
+      "codexSupport": "codex-ready",
+      "notes": []
+    },
+    {
+      "name": "ascendc-registry-invoke-to-direct-invoke",
+      "sourcePath": "ops/ascendc-registry-invoke-to-direct-invoke",
+      "officialSkillPackages": [],
+      "codexSupport": "codex-ready",
+      "notes": []
+    },
+    {
+      "name": "ascendc-runtime-debug",
+      "sourcePath": "ops/ascendc-runtime-debug",
+      "officialSkillPackages": [
+        "ops-direct-invoke-skills",
+        "ops-registry-invoke-skills"
+      ],
+      "codexSupport": "codex-ready",
+      "notes": []
+    },
+    {
+      "name": "ascendc-simt-best-practices",
+      "sourcePath": "ops/ascendc-simt-best-practices",
+      "officialSkillPackages": [],
+      "codexSupport": "codex-ready",
+      "notes": []
+    },
+    {
+      "name": "ascendc-simt-tiling-design",
+      "sourcePath": "ops/ascendc-simt-tiling-design",
+      "officialSkillPackages": [],
+      "codexSupport": "codex-ready",
+      "notes": []
+    },
+    {
+      "name": "ascendc-st-design",
+      "sourcePath": "ops/ascendc-st-design",
+      "officialSkillPackages": [
+        "ops-registry-invoke-skills"
+      ],
+      "codexSupport": "codex-ready",
+      "notes": []
+    },
+    {
+      "name": "ascendc-task-focus",
+      "sourcePath": "ops/ascendc-task-focus",
+      "officialSkillPackages": [],
+      "codexSupport": "codex-ready",
+      "notes": []
+    },
+    {
+      "name": "ascendc-tiling-design",
+      "sourcePath": "ops/ascendc-tiling-design",
+      "officialSkillPackages": [
+        "ops-direct-invoke-skills",
+        "ops-registry-invoke-skills"
+      ],
+      "codexSupport": "codex-ready",
+      "notes": []
+    },
+    {
+      "name": "ascendc-ut-develop",
+      "sourcePath": "ops/ascendc-ut-develop",
+      "officialSkillPackages": [
+        "ops-registry-invoke-skills"
+      ],
+      "codexSupport": "codex-ready",
+      "notes": []
+    },
+    {
+      "name": "ascendc-whitebox-design",
+      "sourcePath": "ops/ascendc-whitebox-design",
+      "officialSkillPackages": [],
+      "codexSupport": "codex-ready",
+      "notes": []
+    },
+    {
+      "name": "cann-env-setup",
+      "sourcePath": "ops/cann-env-setup",
+      "officialSkillPackages": [],
+      "codexSupport": "codex-ready",
+      "notes": [
+        "requires matching Ascend/CANN environment for execution",
+        "may install tools or access network; keep user confirmation for mutations"
+      ]
+    },
+    {
+      "name": "cannbot-skill-reviewer",
+      "sourcePath": "infra/cannbot-skill-reviewer",
+      "officialSkillPackages": [],
+      "codexSupport": "codex-ready",
+      "notes": [
+        "requires matching Ascend/CANN environment for execution",
+        "GitCode API/network/token may be required"
+      ]
+    },
+    {
+      "name": "catlass-op-design",
+      "sourcePath": "ops/catlass-op-design",
+      "officialSkillPackages": [],
+      "codexSupport": "codex-ready",
+      "notes": []
+    },
+    {
+      "name": "catlass-op-develop",
+      "sourcePath": "ops/catlass-op-develop",
+      "officialSkillPackages": [],
+      "codexSupport": "codex-ready",
+      "notes": []
+    },
+    {
+      "name": "catlass-op-perf-tune",
+      "sourcePath": "ops/catlass-op-perf-tune",
+      "officialSkillPackages": [],
+      "codexSupport": "codex-ready",
+      "notes": [
+        "requires matching Ascend/CANN environment for execution"
+      ]
+    },
+    {
+      "name": "gitcode-issue-gen",
+      "sourcePath": "infra/gitcode-issue-gen",
+      "officialSkillPackages": [
+        "infra-skills"
+      ],
+      "codexSupport": "codex-ready",
+      "notes": [
+        "requires matching Ascend/CANN environment for execution",
+        "may install tools or access network; keep user confirmation for mutations",
+        "GitCode API/network/token may be required"
+      ]
+    },
+    {
+      "name": "gitcode-issue-handler",
+      "sourcePath": "infra/gitcode-issue-handler",
+      "officialSkillPackages": [
+        "infra-skills"
+      ],
+      "codexSupport": "codex-ready",
+      "notes": [
+        "requires matching Ascend/CANN environment for execution",
+        "may install tools or access network; keep user confirmation for mutations",
+        "GitCode API/network/token may be required"
+      ]
+    },
+    {
+      "name": "gitcode-pr-handler",
+      "sourcePath": "infra/gitcode-pr-handler",
+      "officialSkillPackages": [
+        "infra-skills"
+      ],
+      "codexSupport": "codex-ready",
+      "notes": [
+        "requires matching Ascend/CANN environment for execution",
+        "may install tools or access network; keep user confirmation for mutations",
+        "GitCode API/network/token may be required"
+      ]
+    },
+    {
+      "name": "gitcode-toolkit",
+      "sourcePath": "infra/gitcode-toolkit",
+      "officialSkillPackages": [
+        "infra-skills"
+      ],
+      "codexSupport": "codex-ready",
+      "notes": [
+        "requires matching Ascend/CANN environment for execution",
+        "may install tools or access network; keep user confirmation for mutations",
+        "GitCode API/network/token may be required"
+      ]
+    },
+    {
+      "name": "model-infer-fusion",
+      "sourcePath": "model/model-infer-fusion",
+      "officialSkillPackages": [
+        "model-infer-skills"
+      ],
+      "codexSupport": "codex-ready",
+      "notes": [
+        "requires matching Ascend/CANN environment for execution",
+        "GitCode API/network/token may be required"
+      ]
+    },
+    {
+      "name": "model-infer-graph-mode",
+      "sourcePath": "model/model-infer-graph-mode",
+      "officialSkillPackages": [
+        "model-infer-skills"
+      ],
+      "codexSupport": "codex-ready",
+      "notes": [
+        "requires matching Ascend/CANN environment for execution",
+        "GitCode API/network/token may be required"
+      ]
+    },
+    {
+      "name": "model-infer-harmony",
+      "sourcePath": "model/model-infer-harmony",
+      "officialSkillPackages": [
+        "model-infer-harmony-skills"
+      ],
+      "codexSupport": "codex-ready",
+      "notes": [
+        "requires matching Ascend/CANN environment for execution"
+      ]
+    },
+    {
+      "name": "model-infer-kvcache",
+      "sourcePath": "model/model-infer-kvcache",
+      "officialSkillPackages": [
+        "model-infer-skills"
+      ],
+      "codexSupport": "codex-ready",
+      "notes": [
+        "requires matching Ascend/CANN environment for execution"
+      ]
+    },
+    {
+      "name": "model-infer-migrator",
+      "sourcePath": "model/model-infer-migrator",
+      "officialSkillPackages": [
+        "model-infer-skills"
+      ],
+      "codexSupport": "codex-ready",
+      "notes": [
+        "requires matching Ascend/CANN environment for execution"
+      ]
+    },
+    {
+      "name": "model-infer-multi-stream",
+      "sourcePath": "model/model-infer-multi-stream",
+      "officialSkillPackages": [
+        "model-infer-skills"
+      ],
+      "codexSupport": "codex-ready",
+      "notes": [
+        "requires matching Ascend/CANN environment for execution",
+        "GitCode API/network/token may be required"
+      ]
+    },
+    {
+      "name": "model-infer-parallel-analysis",
+      "sourcePath": "model/model-infer-parallel-analysis",
+      "officialSkillPackages": [
+        "model-infer-skills"
+      ],
+      "codexSupport": "codex-ready",
+      "notes": [
+        "requires matching Ascend/CANN environment for execution"
+      ]
+    },
+    {
+      "name": "model-infer-parallel-impl",
+      "sourcePath": "model/model-infer-parallel-impl",
+      "officialSkillPackages": [
+        "model-infer-skills"
+      ],
+      "codexSupport": "codex-ready",
+      "notes": [
+        "requires matching Ascend/CANN environment for execution"
+      ]
+    },
+    {
+      "name": "model-infer-precision-debug",
+      "sourcePath": "model/model-infer-precision-debug",
+      "officialSkillPackages": [
+        "model-infer-skills"
+      ],
+      "codexSupport": "codex-ready",
+      "notes": []
+    },
+    {
+      "name": "model-infer-prefetch",
+      "sourcePath": "model/model-infer-prefetch",
+      "officialSkillPackages": [
+        "model-infer-skills"
+      ],
+      "codexSupport": "codex-ready",
+      "notes": [
+        "requires matching Ascend/CANN environment for execution"
+      ]
+    },
+    {
+      "name": "model-infer-quantization",
+      "sourcePath": "model/model-infer-quantization",
+      "officialSkillPackages": [
+        "model-infer-skills"
+      ],
+      "codexSupport": "codex-ready",
+      "notes": []
+    },
+    {
+      "name": "model-infer-runtime-debug",
+      "sourcePath": "model/model-infer-runtime-debug",
+      "officialSkillPackages": [
+        "model-infer-skills"
+      ],
+      "codexSupport": "codex-ready",
+      "notes": [
+        "requires matching Ascend/CANN environment for execution"
+      ]
+    },
+    {
+      "name": "model-infer-superkernel",
+      "sourcePath": "model/model-infer-superkernel",
+      "officialSkillPackages": [
+        "model-infer-skills"
+      ],
+      "codexSupport": "codex-ready",
+      "notes": [
+        "requires matching Ascend/CANN environment for execution"
+      ]
+    },
+    {
+      "name": "model-train-accuracy-debug",
+      "sourcePath": "model/model-train-accuracy-debug",
+      "officialSkillPackages": [
+        "model-train-skills"
+      ],
+      "codexSupport": "codex-ready",
+      "notes": [
+        "requires matching Ascend/CANN environment for execution",
+        "may install tools or access network; keep user confirmation for mutations"
+      ]
+    },
+    {
+      "name": "model-train-oom-analysis",
+      "sourcePath": "model/model-train-oom-analysis",
+      "officialSkillPackages": [
+        "model-train-skills"
+      ],
+      "codexSupport": "codex-ready",
+      "notes": [
+        "requires matching Ascend/CANN environment for execution",
+        "GitCode API/network/token may be required"
+      ]
+    },
+    {
+      "name": "npu-arch",
+      "sourcePath": "ops/npu-arch",
+      "officialSkillPackages": [
+        "ops-direct-invoke-skills",
+        "ops-registry-invoke-skills",
+        "triton-op-generator-skills"
+      ],
+      "codexSupport": "codex-ready",
+      "notes": []
+    },
+    {
+      "name": "ops-precision-standard",
+      "sourcePath": "ops/ops-precision-standard",
+      "officialSkillPackages": [
+        "ops-direct-invoke-skills",
+        "ops-registry-invoke-skills"
+      ],
+      "codexSupport": "codex-ready",
+      "notes": []
+    },
+    {
+      "name": "ops-profiling",
+      "sourcePath": "ops/ops-profiling",
+      "officialSkillPackages": [
+        "ops-direct-invoke-skills",
+        "ops-registry-invoke-skills"
+      ],
+      "codexSupport": "codex-ready",
+      "notes": [
+        "requires matching Ascend/CANN environment for execution"
+      ]
+    },
+    {
+      "name": "ops-simulator",
+      "sourcePath": "ops/ops-simulator",
+      "officialSkillPackages": [],
+      "codexSupport": "codex-ready",
+      "notes": [
+        "requires matching Ascend/CANN environment for execution"
+      ]
+    },
+    {
+      "name": "ops-spec-gen",
+      "sourcePath": "ops/ops-spec-gen",
+      "officialSkillPackages": [
+        "ops-registry-invoke-skills"
+      ],
+      "codexSupport": "codex-ready",
+      "notes": [
+        "requires matching Ascend/CANN environment for execution",
+        "may install tools or access network; keep user confirmation for mutations"
+      ]
+    },
+    {
+      "name": "perf-analyzer",
+      "sourcePath": "ops/pypto-op-perf-tune/perf-analyzer",
+      "officialSkillPackages": [],
+      "codexSupport": "codex-ready",
+      "notes": []
+    },
+    {
+      "name": "precision-binary-search",
+      "sourcePath": "ops/pypto-precision-compare/precision-binary-search",
+      "officialSkillPackages": [],
+      "codexSupport": "codex-ready",
+      "notes": []
+    },
+    {
+      "name": "precision-pass",
+      "sourcePath": "ops/pypto-precision-compare/precision-pass",
+      "officialSkillPackages": [],
+      "codexSupport": "codex-ready",
+      "notes": [
+        "may install tools or access network; keep user confirmation for mutations"
+      ]
+    },
+    {
+      "name": "precision-verify",
+      "sourcePath": "ops/pypto-precision-compare/precision-verify",
+      "officialSkillPackages": [],
+      "codexSupport": "codex-ready",
+      "notes": []
+    },
+    {
+      "name": "pypto-api-explore",
+      "sourcePath": "ops/pypto-api-explore",
+      "officialSkillPackages": [
+        "pypto-op-orchestrator-skills"
+      ],
+      "codexSupport": "codex-ready",
+      "notes": []
+    },
+    {
+      "name": "pypto-golden-generate",
+      "sourcePath": "ops/pypto-golden-generate",
+      "officialSkillPackages": [
+        "pypto-op-orchestrator-skills"
+      ],
+      "codexSupport": "codex-ready",
+      "notes": []
+    },
+    {
+      "name": "pypto-intent-understand",
+      "sourcePath": "ops/pypto-intent-understand",
+      "officialSkillPackages": [
+        "pypto-op-orchestrator-skills"
+      ],
+      "codexSupport": "codex-ready",
+      "notes": []
+    },
+    {
+      "name": "pypto-op-design",
+      "sourcePath": "ops/pypto-op-design",
+      "officialSkillPackages": [
+        "pypto-op-orchestrator-skills"
+      ],
+      "codexSupport": "codex-ready",
+      "notes": []
+    },
+    {
+      "name": "pypto-op-develop",
+      "sourcePath": "ops/pypto-op-develop",
+      "officialSkillPackages": [
+        "pypto-op-orchestrator-skills"
+      ],
+      "codexSupport": "codex-ready",
+      "notes": [
+        "requires matching Ascend/CANN environment for execution"
+      ]
+    },
+    {
+      "name": "pypto-op-perf-tune",
+      "sourcePath": "ops/pypto-op-perf-tune",
+      "officialSkillPackages": [
+        "pypto-op-orchestrator-skills"
+      ],
+      "codexSupport": "codex-ready",
+      "notes": [
+        "requires matching Ascend/CANN environment for execution",
+        "GitCode API/network/token may be required"
+      ]
+    },
+    {
+      "name": "pypto-precision-compare",
+      "sourcePath": "ops/pypto-precision-compare",
+      "officialSkillPackages": [
+        "pypto-op-orchestrator-skills"
+      ],
+      "codexSupport": "codex-ready",
+      "notes": [
+        "may install tools or access network; keep user confirmation for mutations"
+      ]
+    },
+    {
+      "name": "pypto-precision-debug",
+      "sourcePath": "ops/pypto-precision-debug",
+      "officialSkillPackages": [
+        "pypto-op-orchestrator-skills"
+      ],
+      "codexSupport": "codex-ready",
+      "notes": []
+    },
+    {
+      "name": "runtime_migration",
+      "sourcePath": "runtime/runtime_migration",
+      "officialSkillPackages": [],
+      "codexSupport": "codex-ready",
+      "notes": [
+        "requires matching Ascend/CANN environment for execution"
+      ]
+    },
+    {
+      "name": "tilelang-api-best-practices",
+      "sourcePath": "ops/tilelang-api-best-practices",
+      "officialSkillPackages": [
+        "tilelang-op-orchestrator-skills"
+      ],
+      "codexSupport": "codex-ready",
+      "notes": []
+    },
+    {
+      "name": "tilelang-env-check",
+      "sourcePath": "ops/tilelang-env-check",
+      "officialSkillPackages": [
+        "tilelang-op-orchestrator-skills"
+      ],
+      "codexSupport": "codex-ready",
+      "notes": [
+        "requires matching Ascend/CANN environment for execution",
+        "may install tools or access network; keep user confirmation for mutations"
+      ]
+    },
+    {
+      "name": "tilelang-op-design",
+      "sourcePath": "ops/tilelang-op-design",
+      "officialSkillPackages": [
+        "tilelang-op-orchestrator-skills"
+      ],
+      "codexSupport": "codex-ready",
+      "notes": []
+    },
+    {
+      "name": "tilelang-op-develop",
+      "sourcePath": "ops/tilelang-op-develop",
+      "officialSkillPackages": [
+        "tilelang-op-orchestrator-skills"
+      ],
+      "codexSupport": "codex-ready",
+      "notes": []
+    },
+    {
+      "name": "tilelang-op-test-design",
+      "sourcePath": "ops/tilelang-op-test-design",
+      "officialSkillPackages": [
+        "tilelang-op-orchestrator-skills"
+      ],
+      "codexSupport": "codex-ready",
+      "notes": []
+    },
+    {
+      "name": "tilelang-perf-optimization",
+      "sourcePath": "ops/tilelang-perf-optimization",
+      "officialSkillPackages": [
+        "tilelang-op-orchestrator-skills"
+      ],
+      "codexSupport": "codex-ready",
+      "notes": [
+        "requires matching Ascend/CANN environment for execution"
+      ]
+    },
+    {
+      "name": "tilelang-programming-model-guide",
+      "sourcePath": "ops/tilelang-programming-model-guide",
+      "officialSkillPackages": [
+        "tilelang-op-orchestrator-skills"
+      ],
+      "codexSupport": "codex-ready",
+      "notes": []
+    },
+    {
+      "name": "tilelang-review",
+      "sourcePath": "ops/tilelang-review",
+      "officialSkillPackages": [
+        "tilelang-op-orchestrator-skills"
+      ],
+      "codexSupport": "codex-ready",
+      "notes": [
+        "may install tools or access network; keep user confirmation for mutations"
+      ]
+    },
+    {
+      "name": "tilelang-submodule-pull",
+      "sourcePath": "ops/tilelang-submodule-pull",
+      "officialSkillPackages": [
+        "tilelang-op-orchestrator-skills"
+      ],
+      "codexSupport": "codex-ready",
+      "notes": []
+    },
+    {
+      "name": "torch-ascendc-op-extension",
+      "sourcePath": "ops/torch-ascendc-op-extension",
+      "officialSkillPackages": [
+        "ops-direct-invoke-skills"
+      ],
+      "codexSupport": "codex-ready",
+      "notes": [
+        "requires matching Ascend/CANN environment for execution"
+      ]
+    },
+    {
+      "name": "torch-custom-ops-guide",
+      "sourcePath": "graph/torch-custom-ops-guide",
+      "officialSkillPackages": [
+        "torch-npugraph-ex-skills"
+      ],
+      "codexSupport": "codex-ready",
+      "notes": []
+    },
+    {
+      "name": "torch-npugraph-ex-compile-error-diagnosis",
+      "sourcePath": "graph/torch-npugraph-ex-compile-error-diagnosis",
+      "officialSkillPackages": [
+        "torch-npugraph-ex-skills"
+      ],
+      "codexSupport": "codex-ready",
+      "notes": [
+        "requires matching Ascend/CANN environment for execution",
+        "GitCode API/network/token may be required"
+      ]
+    },
+    {
+      "name": "torch-npugraph-ex-dfx-triage",
+      "sourcePath": "graph/torch-npugraph-ex-dfx-triage",
+      "officialSkillPackages": [
+        "torch-npugraph-ex-skills"
+      ],
+      "codexSupport": "codex-ready",
+      "notes": [
+        "requires matching Ascend/CANN environment for execution"
+      ]
+    },
+    {
+      "name": "torch-npugraph-ex-knowledge",
+      "sourcePath": "graph/torch-npugraph-ex-knowledge",
+      "officialSkillPackages": [
+        "torch-npugraph-ex-skills"
+      ],
+      "codexSupport": "codex-ready",
+      "notes": [
+        "requires matching Ascend/CANN environment for execution",
+        "GitCode API/network/token may be required"
+      ]
+    },
+    {
+      "name": "torch-npugraph-ex-performance-diagnosis",
+      "sourcePath": "graph/torch-npugraph-ex-performance-diagnosis",
+      "officialSkillPackages": [],
+      "codexSupport": "codex-ready",
+      "notes": []
+    },
+    {
+      "name": "torch-npugraph-ex-runtime-error-diagnosis",
+      "sourcePath": "graph/torch-npugraph-ex-runtime-error-diagnosis",
+      "officialSkillPackages": [
+        "torch-npugraph-ex-skills"
+      ],
+      "codexSupport": "codex-ready",
+      "notes": [
+        "requires matching Ascend/CANN environment for execution",
+        "GitCode API/network/token may be required"
+      ]
+    },
+    {
+      "name": "torch-npugraph-ex-template",
+      "sourcePath": "graph/torch-npugraph-ex-template",
+      "officialSkillPackages": [
+        "torch-npugraph-ex-skills"
+      ],
+      "codexSupport": "codex-ready",
+      "notes": [
+        "requires matching Ascend/CANN environment for execution"
+      ]
+    },
+    {
+      "name": "torch-ops-profiler",
+      "sourcePath": "ops/torch-ops-profiler",
+      "officialSkillPackages": [],
+      "codexSupport": "codex-ready",
+      "notes": [
+        "requires matching Ascend/CANN environment for execution"
+      ]
+    },
+    {
+      "name": "triton-latency-optimizer",
+      "sourcePath": "ops/triton-latency-optimizer",
+      "officialSkillPackages": [
+        "triton-op-generator-skills"
+      ],
+      "codexSupport": "codex-ready",
+      "notes": []
+    },
+    {
+      "name": "triton-op-coding",
+      "sourcePath": "ops/triton-op-coding",
+      "officialSkillPackages": [
+        "triton-op-generator-skills"
+      ],
+      "codexSupport": "codex-ready",
+      "notes": [
+        "requires matching Ascend/CANN environment for execution"
+      ]
+    },
+    {
+      "name": "triton-op-designer",
+      "sourcePath": "ops/triton-op-designer",
+      "officialSkillPackages": [
+        "triton-op-generator-skills"
+      ],
+      "codexSupport": "codex-ready",
+      "notes": []
+    },
+    {
+      "name": "triton-op-verifier",
+      "sourcePath": "ops/triton-op-verifier",
+      "officialSkillPackages": [
+        "triton-op-generator-skills"
+      ],
+      "codexSupport": "codex-ready",
+      "notes": []
+    },
+    {
+      "name": "triton-task-extractor",
+      "sourcePath": "ops/triton-task-extractor",
+      "officialSkillPackages": [
+        "triton-op-generator-skills"
+      ],
+      "codexSupport": "codex-ready",
+      "notes": []
+    },
+    {
+      "name": "tune-frontend",
+      "sourcePath": "ops/pypto-op-perf-tune/tune-frontend",
+      "officialSkillPackages": [],
+      "codexSupport": "codex-ready",
+      "notes": []
+    },
+    {
+      "name": "tune-incore",
+      "sourcePath": "ops/pypto-op-perf-tune/tune-incore",
+      "officialSkillPackages": [],
+      "codexSupport": "codex-ready",
+      "notes": []
+    },
+    {
+      "name": "tune-orchestrator",
+      "sourcePath": "ops/pypto-op-perf-tune/tune-orchestrator",
+      "officialSkillPackages": [],
+      "codexSupport": "codex-ready",
+      "notes": []
+    },
+    {
+      "name": "tune-swimlane",
+      "sourcePath": "ops/pypto-op-perf-tune/tune-swimlane",
+      "officialSkillPackages": [],
+      "codexSupport": "codex-ready",
+      "notes": []
+    }
+  ]
+}

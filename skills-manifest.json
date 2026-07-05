@@ -1,0 +1,1367 @@
+{
+  "schemaVersion": 1,
+  "plugin": "cannbot",
+  "upstreamCommit": "7def5becc576de40d0e13b0fddad8345e57540e0",
+  "generatedAt": "2026-07-05T09:40:19.812362+00:00",
+  "includeExperimental": false,
+  "officialMarketplace": {
+    "path": ".claude-plugin/marketplace.json",
+    "skillPackages": {
+      "ops-direct-invoke-skills": {
+        "source": "./ops",
+        "version": "1.0.4",
+        "skills": [
+          "ascendc-api-best-practices",
+          "ascendc-blaze-best-practice",
+          "ascendc-code-review",
+          "ascendc-crash-debug",
+          "ascendc-direct-invoke-template",
+          "ascendc-docs-search",
+          "ascendc-env-check",
+          "ascendc-precision-debug",
+          "ascendc-regbase-best-practice",
+          "ascendc-runtime-debug",
+          "ascendc-tiling-design",
+          "npu-arch",
+          "ops-precision-standard",
+          "ops-profiling",
+          "torch-ascendc-op-extension"
+        ]
+      },
+      "aiss-tiling-solver": {
+        "source": "./ops",
+        "version": "1.0.0",
+        "skills": [
+          "aiss-tiling-solver"
+        ]
+      },
+      "pypto-op-orchestrator-skills": {
+        "source": "./ops",
+        "version": "1.1.0",
+        "skills": [
+          "pypto-api-explore",
+          "pypto-golden-generate",
+          "pypto-intent-understand",
+          "pypto-op-design",
+          "pypto-op-develop",
+          "pypto-op-perf-tune",
+          "pypto-precision-compare",
+          "pypto-precision-debug"
+        ]
+      },
+      "ops-code-reviewer-skills": {
+        "source": "./ops",
+        "version": "1.1.0",
+        "skills": [
+          "ascendc-code-review",
+          "ascendc-docs-search"
+        ]
+      },
+      "torch-npugraph-ex-skills": {
+        "source": "./graph",
+        "version": "1.0.0",
+        "skills": [
+          "torch-custom-ops-guide",
+          "torch-npugraph-ex-compile-error-diagnosis",
+          "torch-npugraph-ex-dfx-triage",
+          "torch-npugraph-ex-knowledge",
+          "torch-npugraph-ex-runtime-error-diagnosis",
+          "torch-npugraph-ex-template"
+        ]
+      },
+      "model-infer-skills": {
+        "source": "./model",
+        "version": "1.0.0",
+        "skills": [
+          "model-infer-fusion",
+          "model-infer-graph-mode",
+          "model-infer-kvcache",
+          "model-infer-migrator",
+          "model-infer-multi-stream",
+          "model-infer-parallel-analysis",
+          "model-infer-parallel-impl",
+          "model-infer-precision-debug",
+          "model-infer-prefetch",
+          "model-infer-quantization",
+          "model-infer-runtime-debug",
+          "model-infer-superkernel"
+        ]
+      },
+      "model-infer-harmony-skills": {
+        "source": "./model",
+        "version": "1.0.0",
+        "skills": [
+          "model-infer-harmony"
+        ]
+      },
+      "model-train-skills": {
+        "source": "./model",
+        "version": "1.0.0",
+        "skills": [
+          "model-train-accuracy-debug",
+          "model-train-oom-analysis"
+        ]
+      },
+      "tilelang-op-orchestrator-skills": {
+        "source": "./ops",
+        "version": "1.1.0",
+        "skills": [
+          "tilelang-api-best-practices",
+          "tilelang-env-check",
+          "tilelang-op-design",
+          "tilelang-op-develop",
+          "tilelang-op-test-design",
+          "tilelang-perf-optimization",
+          "tilelang-programming-model-guide",
+          "tilelang-review",
+          "tilelang-submodule-pull"
+        ]
+      },
+      "infra-skills": {
+        "source": "./infra",
+        "version": "1.0.0",
+        "skills": [
+          "gitcode-issue-gen",
+          "gitcode-issue-handler",
+          "gitcode-pr-handler",
+          "gitcode-toolkit"
+        ]
+      },
+      "ops-registry-invoke-skills": {
+        "source": "./ops",
+        "version": "1.0.0",
+        "skills": [
+          "ascendc-api-best-practices",
+          "ascendc-blaze-best-practice",
+          "ascendc-code-review",
+          "ascendc-crash-debug",
+          "ascendc-direct-invoke-template",
+          "ascendc-docs-gen",
+          "ascendc-docs-search",
+          "ascendc-env-check",
+          "ascendc-performance-best-practices",
+          "ascendc-precision-debug",
+          "ascendc-regbase-best-practice",
+          "ascendc-registry-invoke-template",
+          "ascendc-runtime-debug",
+          "ascendc-st-design",
+          "ascendc-tiling-design",
+          "ascendc-ut-develop",
+          "npu-arch",
+          "ops-precision-standard",
+          "ops-profiling",
+          "ops-spec-gen"
+        ]
+      },
+      "triton-op-generator-skills": {
+        "source": "./ops",
+        "version": "1.0.0",
+        "skills": [
+          "npu-arch",
+          "triton-latency-optimizer",
+          "triton-op-coding",
+          "triton-op-designer",
+          "triton-op-verifier",
+          "triton-task-extractor"
+        ]
+      },
+      "tilelang2ascend-ops-developer-skills": {
+        "source": "./ops-lab/tilelang-to-ascendc/skills",
+        "version": "1.0.0",
+        "skills": [
+          "tilelang2ascend-case-simplifier",
+          "tilelang2ascend-operator-project-init",
+          "tilelang2ascend-precision-tuning",
+          "tilelang2ascend-tilelang-designer",
+          "tilelang2ascend-trace-recorder",
+          "tilelang2ascend-translator"
+        ]
+      }
+    },
+    "developmentTeams": {
+      "ops-direct-invoke": {
+        "source": "./plugins-official/ops-direct-invoke",
+        "version": "1.2.4",
+        "dependencies": [
+          "ops-direct-invoke-skills",
+          "infra-skills"
+        ]
+      },
+      "ops-direct-invoke-flash": {
+        "source": "./plugins-official/ops-direct-invoke-flash",
+        "version": "1.2.2",
+        "dependencies": [
+          "infra-skills"
+        ]
+      },
+      "ops-registry-invoke": {
+        "source": "./plugins-official/ops-registry-invoke",
+        "version": "1.2.0",
+        "dependencies": [
+          "ops-registry-invoke-skills",
+          "infra-skills"
+        ]
+      },
+      "pypto-op-orchestrator": {
+        "source": "./plugins-official/pypto-op-orchestrator",
+        "version": "1.1.9",
+        "dependencies": [
+          "pypto-op-orchestrator-skills"
+        ]
+      },
+      "ops-code-reviewer": {
+        "source": "./plugins-official/ops-code-reviewer",
+        "version": "1.1.0",
+        "dependencies": [
+          "ops-code-reviewer-skills"
+        ]
+      },
+      "torch-compile": {
+        "source": "./plugins-official/torch-compile",
+        "version": "1.0.4",
+        "dependencies": [
+          "torch-npugraph-ex-skills"
+        ]
+      },
+      "model-infer-optimize": {
+        "source": "./plugins-official/model-infer-optimize",
+        "version": "1.0.3",
+        "dependencies": [
+          "model-infer-skills"
+        ]
+      },
+      "tilelang-op-orchestrator": {
+        "source": "./plugins-official/tilelang-op-orchestrator",
+        "version": "1.1.0",
+        "dependencies": [
+          "tilelang-op-orchestrator-skills"
+        ]
+      },
+      "triton-op-generator": {
+        "source": "./plugins-official/triton-op-generator",
+        "version": "1.0.2",
+        "dependencies": [
+          "triton-op-generator-skills"
+        ]
+      },
+      "ascendc-ops-developer": {
+        "source": "./plugins-community/ascendc-ops-lab-developer",
+        "version": "1.0.0",
+        "dependencies": [
+          "tilelang2ascend-ops-developer-skills"
+        ]
+      }
+    }
+  },
+  "skills": [
+    {
+      "name": "aiss-tiling-solver",
+      "description": "使用 AISS-TilingSolver 工具自动求解 Ascend C 算子（MatMul / Vector）的最优 Tiling 参数，包括下载安装、构造 JSON 输入、运行求解、结果解读与故障排查。触发：当用户使用 TilingSolver 工具求解时。",
+      "localPath": "skills/aiss-tiling-solver",
+      "sourcePath": "ops/aiss-tiling-solver",
+      "officialSkillPackages": [
+        "aiss-tiling-solver"
+      ],
+      "codexSupport": "codex-ready",
+      "notes": [
+        "may install tools or access network; keep user confirmation for mutations",
+        "GitCode API/network/token may be required"
+      ]
+    },
+    {
+      "name": "ascendc-api-best-practices",
+      "description": "Ascend C API 使用最佳实践。提供算术、归约、数据搬运、Buffer管理、精度转换等 API 的正确用法和限制说明。触发：用户询问具体 API 用法（如\"DataCopy 怎么用\"）、遇到 API 参数错误或限制报错（如 repeatTimes、对齐问题）、需要查看 API 最佳实践或避坑指南时。",
+      "localPath": "skills/ascendc-api-best-practices",
+      "sourcePath": "ops/ascendc-api-best-practices",
+      "officialSkillPackages": [
+        "ops-direct-invoke-skills",
+        "ops-registry-invoke-skills"
+      ],
+      "codexSupport": "codex-ready",
+      "notes": []
+    },
+    {
+      "name": "ascendc-blaze-best-practice",
+      "description": "Matmul/Cube/GEMM/BMM/GroupMatmul 单算子及 matmul+vector 融合算子直调生成（Ascend 950 / DAV_3510 的 Blaze/tensor_api 路径）。当用户提到 Blaze、tensor_api，或 Matmul/GroupMatmul 已判定为 950/DAV_3510 路径时必须使用此 skill。覆盖纯AIC/StreamK/FixpOpti 三模板选型、GroupMatmul M/K 轴分组、RegBase/MemBase 两种 epilogue 路径（推荐 RegBase）、改造、Tiling 及排错。不适用纯 Vector 逐元素/归约算子、非 Blaze 路径，或 A2/A3（DAV_2201）的 Ascend C Matmul 高阶 API 路径。",
+      "localPath": "skills/ascendc-blaze-best-practice",
+      "sourcePath": "ops/ascendc-blaze-best-practice",
+      "officialSkillPackages": [
+        "ops-direct-invoke-skills",
+        "ops-registry-invoke-skills"
+      ],
+      "codexSupport": "codex-ready",
+      "notes": [
+        "requires matching Ascend/CANN environment for execution"
+      ]
+    },
+    {
+      "name": "ascendc-code-review",
+      "description": "Ascend C 代码检视技能。触发：检视代码、检视 PR、检查是否有问题、快速检视。支持文件检视、PR 检视、大型PR自动切换、快速定向检视、设计一致性检查。自动识别代码侧别、提取适用条例、执行假设检验驱动的逐条检视。",
+      "localPath": "skills/ascendc-code-review",
+      "sourcePath": "ops/ascendc-code-review",
+      "officialSkillPackages": [
+        "ops-code-reviewer-skills",
+        "ops-direct-invoke-skills",
+        "ops-registry-invoke-skills"
+      ],
+      "codexSupport": "codex-ready",
+      "notes": [
+        "GitCode API/network/token may be required"
+      ]
+    },
+    {
+      "name": "ascendc-crash-debug",
+      "description": "Ascend C 算子卡死/崩溃/内存错误调试路由技能。用于处理程序无法运行完或执行异常崩溃的场景：(1) 程序卡死/挂起/超时，Kernel 无响应，(2) 程序崩溃（Segmentation Fault、Abort），(3) Buffer 冲突/死锁导致的核心挂起，(4) 需要解析 plog 日志定位卡死/崩溃位置，(5) 偶发崩溃/结果异常（怀疑内存越界踩踏），需要主动检测内存错误。触发关键词：卡死、挂起、超时、崩溃、hang、crash、deadlock、Segmentation Fault、Abort、Kernel hang、内存越界、plog、memcheck、内存检查、内存错误、偶发崩溃、aic error、非法读写。",
+      "localPath": "skills/ascendc-crash-debug",
+      "sourcePath": "ops/ascendc-crash-debug",
+      "officialSkillPackages": [
+        "ops-direct-invoke-skills",
+        "ops-registry-invoke-skills"
+      ],
+      "codexSupport": "codex-ready",
+      "notes": []
+    },
+    {
+      "name": "ascendc-direct-invoke-template",
+      "description": "Kernel直调工程模板，用于创建 Ascend C Kernel 直调工程项目。提供经过验证的 Vector 样例工程（add_custom）和 mxfp8 matmul+eltwise 融合工程，含清晰的修改指南。触发：当用户需要创建 Kernel 直调工程、学习 Ascend C 编程、快速原型验证、或提及\"Kernel直调\"、\"<<<>>>内核调用\"、\"mxfp8 融合\"时使用本 skill。",
+      "localPath": "skills/ascendc-direct-invoke-template",
+      "sourcePath": "ops/ascendc-direct-invoke-template",
+      "officialSkillPackages": [
+        "ops-direct-invoke-skills",
+        "ops-registry-invoke-skills"
+      ],
+      "codexSupport": "codex-ready",
+      "notes": [
+        "requires matching Ascend/CANN environment for execution",
+        "GitCode API/network/token may be required"
+      ]
+    },
+    {
+      "name": "ascendc-direct-invoke-to-registry-invoke",
+      "description": "当用户想把`<<<>>>` kernel 直调形式改造成自定义算子工程时使用。触发：用户提到\"kernel直调转自定义算子\"、\"为kernel直调工程接入ACLNN/GEIR接口\"、\"`<<<>>>` 改自定义算子工程\"等。不适用于从零开发新算子",
+      "localPath": "skills/ascendc-direct-invoke-to-registry-invoke",
+      "sourcePath": "ops/ascendc-direct-invoke-to-registry-invoke",
+      "officialSkillPackages": [],
+      "codexSupport": "codex-ready",
+      "notes": [
+        "requires matching Ascend/CANN environment for execution"
+      ]
+    },
+    {
+      "name": "ascendc-docs-gen",
+      "description": "Ascend C 算子文档写作参考。提供需求分析、详细设计、迭代计划、aclnnAPI接口文档、算子README的标准模板。当用户需要生成算子文档、aclnnAPI文档、算子README、参考文档模板或了解算子文档规范时触发此技能。",
+      "localPath": "skills/ascendc-docs-gen",
+      "sourcePath": "ops/ascendc-docs-gen",
+      "officialSkillPackages": [
+        "ops-registry-invoke-skills"
+      ],
+      "codexSupport": "codex-ready",
+      "notes": []
+    },
+    {
+      "name": "ascendc-docs-search",
+      "description": "Ascend C 开发资源检索技能。通过本地 API 文档索引、示例代码映射和在线文档兜底搜索定位开发资料，优先查本地、缺失时再查在线。当需要查询 API 用法、示例代码、兼容性信息、官方资料入口或定位文档来源时使用。",
+      "localPath": "skills/ascendc-docs-search",
+      "sourcePath": "ops/ascendc-docs-search",
+      "officialSkillPackages": [
+        "ops-code-reviewer-skills",
+        "ops-direct-invoke-skills",
+        "ops-registry-invoke-skills"
+      ],
+      "codexSupport": "codex-ready",
+      "notes": [
+        "requires matching Ascend/CANN environment for execution",
+        "may install tools or access network; keep user confirmation for mutations"
+      ]
+    },
+    {
+      "name": "ascendc-env-check",
+      "description": "Ascend C 算子开发环境检查技能。用于：(1) 通过 npu-smi 查询 NPU 设备信息（设备列表、状态、资源使用），(2) 检查 CANN 环境配置（CANN Toolkit、Ops、自定义算子包），(3) 验证开发依赖是否完整，(4) 运行时检测当前设备 NPU 架构。触发关键词：环境检查、NPU设备、npu-smi、CANN安装、设备查询、资源监控、检查CANN环境变量、NPU架构、npu arch。",
+      "localPath": "skills/ascendc-env-check",
+      "sourcePath": "ops/ascendc-env-check",
+      "officialSkillPackages": [
+        "ops-direct-invoke-skills",
+        "ops-registry-invoke-skills"
+      ],
+      "codexSupport": "codex-ready",
+      "notes": [
+        "requires matching Ascend/CANN environment for execution"
+      ]
+    },
+    {
+      "name": "ascendc-perf-optimize",
+      "description": "Ascend C 算子性能优化策略制定。结合 Tiling 建模与流水分析（仿真图 + profiling 数据），按卡间/核间/核内三层流水制定性能优化策略，并回修 Tiling 参数。触发：算子性能调优、流水分析、Tiling 修正、bound 诊断时。",
+      "localPath": "skills/ascendc-perf-optimize",
+      "sourcePath": "ops/ascendc-perf-optimize",
+      "officialSkillPackages": [],
+      "codexSupport": "codex-ready",
+      "notes": []
+    },
+    {
+      "name": "ascendc-performance-best-practices",
+      "description": "Ascend C 算子性能优化最佳实践库。按算子族组织优化经验与参考代码总结，供性能优化实施阶段查询。触发：查询某类算子的性能优化参考实现、实施某项优化时需加载对应优化经验时。",
+      "localPath": "skills/ascendc-performance-best-practices",
+      "sourcePath": "ops/ascendc-performance-best-practices",
+      "officialSkillPackages": [
+        "ops-registry-invoke-skills"
+      ],
+      "codexSupport": "codex-ready",
+      "notes": []
+    },
+    {
+      "name": "ascendc-precision-debug",
+      "description": "Ascend C 算子精度调试技能，提供精度问题诊断和解决方法。触发：输出异常（全为0、随机值、未初始化）、精度验证失败（rtol/atol 不达标）、FP16 精度差于预期、Cast 后数据错误、需要排查流水线同步（EnQue/DeQue）或 DataCopy 对齐问题。",
+      "localPath": "skills/ascendc-precision-debug",
+      "sourcePath": "ops/ascendc-precision-debug",
+      "officialSkillPackages": [
+        "ops-direct-invoke-skills",
+        "ops-registry-invoke-skills"
+      ],
+      "codexSupport": "codex-ready",
+      "notes": []
+    },
+    {
+      "name": "ascendc-regbase-best-practice",
+      "description": "当需要为 DAV_3510 RegBase 算子确认 API 约束、实现结构、排查常见陷阱或选择真实参考算子时使用。",
+      "localPath": "skills/ascendc-regbase-best-practice",
+      "sourcePath": "ops/ascendc-regbase-best-practice",
+      "officialSkillPackages": [
+        "ops-direct-invoke-skills",
+        "ops-registry-invoke-skills"
+      ],
+      "codexSupport": "codex-ready",
+      "notes": []
+    },
+    {
+      "name": "ascendc-registry-invoke-template",
+      "description": "完整自定义算子工程模板。通过提供标准工程结构、代码模板、UT/ST 样例和多芯片架构参考，帮助快速搭建并实现 registry-invoke 方式的自定义算子工程。当需要创建完整自定义算子工程、参考标准目录结构、补齐 UT/ST、适配多芯片架构或查找工程样例时使用。",
+      "localPath": "skills/ascendc-registry-invoke-template",
+      "sourcePath": "ops/ascendc-registry-invoke-template",
+      "officialSkillPackages": [
+        "ops-registry-invoke-skills"
+      ],
+      "codexSupport": "codex-ready",
+      "notes": []
+    },
+    {
+      "name": "ascendc-registry-invoke-to-direct-invoke",
+      "description": "当用户想把自定义算子工程中的 kernel 模板改造成 `<<<>>>` kernel 直调形式，或从自定义算子工程中抽取某个 kernel 模板并转换成 `<<<>>>` 直调方式时使用。触发：用户提到\"自定义算子转直调\"、\"从算子工程抽 kernel\"、\"kernel 模板改 `<<<>>>`\"等。不适用于从零开发新算子",
+      "localPath": "skills/ascendc-registry-invoke-to-direct-invoke",
+      "sourcePath": "ops/ascendc-registry-invoke-to-direct-invoke",
+      "officialSkillPackages": [],
+      "codexSupport": "codex-ready",
+      "notes": []
+    },
+    {
+      "name": "ascendc-runtime-debug",
+      "description": "Ascend C 算子运行时错误调试技能。用于处理算子运行时问题：(1) aclnn 返回错误码（161xxx/361xxx/561xxx，包括环境配置、Tiling、Kernel 查找等错误），(2) 需要解析 plog 日志定位问题。触发关键词：运行时错误、错误码、Tiling错误、Kernel查找失败、环境变量、plog。",
+      "localPath": "skills/ascendc-runtime-debug",
+      "sourcePath": "ops/ascendc-runtime-debug",
+      "officialSkillPackages": [
+        "ops-direct-invoke-skills",
+        "ops-registry-invoke-skills"
+      ],
+      "codexSupport": "codex-ready",
+      "notes": []
+    },
+    {
+      "name": "ascendc-simt-best-practices",
+      "description": "AscendC SIMT 最佳实践与 API 导航。提供 SIMT 算子开发的实践经验总结和专有 API 分类索引：VF函数声明与调用、线程排布模式、索引计算API、数据搬入搬出、计算指令映射、多核同步、核内共享内存、TensorList处理、调测接口、内置宏等。触发：开发SIMT算子kernel代码、设计SIMT编程模式、查询SIMT API分类或线程排布时。",
+      "localPath": "skills/ascendc-simt-best-practices",
+      "sourcePath": "ops/ascendc-simt-best-practices",
+      "officialSkillPackages": [],
+      "codexSupport": "codex-ready",
+      "notes": []
+    },
+    {
+      "name": "ascendc-simt-tiling-design",
+      "description": "AscendC SIMT 算子切分设计指南。提供 SIMT 算子独有的核数切分、线程数设置、DCache/UB空间分配方法。SIMT切分与SIMD完全不同（线程级并行 vs 向量级UB切分），本skill聚焦SIMT切分范式。触发：设计SIMT算子Tiling策略、设置SIMT线程数、规划SIMT核数切分时。",
+      "localPath": "skills/ascendc-simt-tiling-design",
+      "sourcePath": "ops/ascendc-simt-tiling-design",
+      "officialSkillPackages": [],
+      "codexSupport": "codex-ready",
+      "notes": []
+    },
+    {
+      "name": "ascendc-st-design",
+      "description": "Ascend C 算子系统测试（ST）设计技能。基于 aclnn 接口文档，完成算子参数定义、测试因子提取、约束关系分析、测试用例生成（L0/L1/L2）的完整流程。当需要以下任务时使用此技能：设计算子测试用例、生成ST用例。",
+      "localPath": "skills/ascendc-st-design",
+      "sourcePath": "ops/ascendc-st-design",
+      "officialSkillPackages": [
+        "ops-registry-invoke-skills"
+      ],
+      "codexSupport": "codex-ready",
+      "notes": []
+    },
+    {
+      "name": "ascendc-task-focus",
+      "description": "任务聚焦与注意力管理技能。通过创建和维护 todo.md 文件将全局目标保持在上下文末尾，避免长任务中\"迷失在中间\"问题。当出现以下情况时使用：(1) 任务需要超过 5 个步骤完成，(2) 任务复杂有多个子目标，(3) 长上下文对话需要保持焦点，(4) 多步骤开发任务（算子开发、代码重构、精度调试），(5) 用户明确要求制定计划。",
+      "localPath": "skills/ascendc-task-focus",
+      "sourcePath": "ops/ascendc-task-focus",
+      "officialSkillPackages": [],
+      "codexSupport": "codex-ready",
+      "notes": []
+    },
+    {
+      "name": "ascendc-tiling-design",
+      "description": "Ascend C 算子 Tiling 设计指南。提供算子分类体系和 Tiling 核心要素（多核切分、UB切分、Buffer规划、分支覆盖）的详细设计方法。触发：算子设计阶段、设计 Tiling 策略（多核切分/UB切分）、规划 Buffer 分配、查阅某类算子的 Tiling 方法论时。",
+      "localPath": "skills/ascendc-tiling-design",
+      "sourcePath": "ops/ascendc-tiling-design",
+      "officialSkillPackages": [
+        "ops-direct-invoke-skills",
+        "ops-registry-invoke-skills"
+      ],
+      "codexSupport": "codex-ready",
+      "notes": []
+    },
+    {
+      "name": "ascendc-ut-develop",
+      "description": "Ascend C 算子 UT 开发与覆盖率增强技能。通过分析 op_host / op_api / op_kernel 的测试空白、生成或补充 UT 用例并定位未覆盖代码来提升覆盖率并支持生成覆盖率报告。当用户提及 UT、单元测试、覆盖率、补测、未覆盖代码或需要新增/完善 UT 时使用，不适用于 ST 测试。",
+      "localPath": "skills/ascendc-ut-develop",
+      "sourcePath": "ops/ascendc-ut-develop",
+      "officialSkillPackages": [
+        "ops-registry-invoke-skills"
+      ],
+      "codexSupport": "codex-ready",
+      "notes": []
+    },
+    {
+      "name": "ascendc-whitebox-design",
+      "description": "Ascend C 算子白盒测试用例生成系统。分析算子源码提取参数维度，自动枚举参数组合，生成可执行的白盒测试用例。自动两套输出：low 档位（路径覆盖+网络+空tensor，全normal）与 high 档位（data_range 展开，信息性验证）。触发场景：(1) \"为 X 算子生成白盒测试用例\" (2) \"算子白盒用例生成\" (3) \"generate whitebox test cases for operator\"。",
+      "localPath": "skills/ascendc-whitebox-design",
+      "sourcePath": "ops/ascendc-whitebox-design",
+      "officialSkillPackages": [],
+      "codexSupport": "codex-ready",
+      "notes": []
+    },
+    {
+      "name": "cann-env-setup",
+      "description": "昇腾 NPU 上 CANN 安装与环境配置指导。触发场景：需安装 CANN、配置开发环境或排查安装问题时。",
+      "localPath": "skills/cann-env-setup",
+      "sourcePath": "ops/cann-env-setup",
+      "officialSkillPackages": [],
+      "codexSupport": "codex-ready",
+      "notes": [
+        "requires matching Ascend/CANN environment for execution",
+        "may install tools or access network; keep user confirmation for mutations"
+      ]
+    },
+    {
+      "name": "cannbot-skill-reviewer",
+      "description": "审查新提交或修改的 CANNBot Skill 是否符合入库质量要求。当用户需要评审 SKILL.md、检查新增 cannbot skill、审查 GitCode PR 中的技能变更、验证测试/开发/NPU/Ascend 相关 skill 是否合格时使用；输出结构门禁、九维评分、阻塞问题和可执行整改建议。",
+      "localPath": "skills/cannbot-skill-reviewer",
+      "sourcePath": "infra/cannbot-skill-reviewer",
+      "officialSkillPackages": [],
+      "codexSupport": "codex-ready",
+      "notes": [
+        "requires matching Ascend/CANN environment for execution",
+        "GitCode API/network/token may be required"
+      ]
+    },
+    {
+      "name": "catlass-op-design",
+      "description": "Analyze operator requirements and select CATLASS components (ArchTag, DispatchPolicy, TileShape, BlockMmad, BlockEpilogue, BlockScheduler, Kernel type). Use when designing new CATLASS-based Ascend C operators, selecting DispatchPolicy, determining TileShape, choosing Kernel type, or picking Epilogue components. Output: component selection tables, epilogue slot analysis, branch instantiation conditions, workspace estimation.",
+      "localPath": "skills/catlass-op-design",
+      "sourcePath": "ops/catlass-op-design",
+      "officialSkillPackages": [],
+      "codexSupport": "codex-ready",
+      "notes": []
+    },
+    {
+      "name": "catlass-op-develop",
+      "description": "Generate CATLASS kernel code from design selections. Produce: using chain (BlockMmad/BlockEpilogue/BlockScheduler/Kernel), Kernel::Params construction, Device-side calling code, custom Tile Epilogue header files, MatmulEpilogue and QuantMatmul special handling. Use when implementing op_kernel with catlass templates, writing Device-side kernel calls, creating custom Tile Epilogue, or handling QuantMatmul AIC/AIV coordination.",
+      "localPath": "skills/catlass-op-develop",
+      "sourcePath": "ops/catlass-op-develop",
+      "officialSkillPackages": [],
+      "codexSupport": "codex-ready",
+      "notes": []
+    },
+    {
+      "name": "catlass-op-perf-tune",
+      "description": "Tune CATLASS kernel performance by adjusting TileShape, DispatchPolicy, Swizzle, and Kernel type parameters. Change one variable at a time for attribution. Use when optimizing CATLASS kernel performance, analyzing profiler bottlenecks, or exploring tiling configurations.",
+      "localPath": "skills/catlass-op-perf-tune",
+      "sourcePath": "ops/catlass-op-perf-tune",
+      "officialSkillPackages": [],
+      "codexSupport": "codex-ready",
+      "notes": [
+        "requires matching Ascend/CANN environment for execution"
+      ]
+    },
+    {
+      "name": "gitcode-issue-gen",
+      "description": "根据用户输入自动判断走两条路径之一：(PR路径) 用户提供 GitCode PR 链接时，按变更类型自动选用 Issue 模板，通过 GitCode API 创建 Issue 并完成 PR ↔ Issue 双向关联；(手动路径) 用户直接描述问题或要求\"提 Issue / 生成草稿\"时，交互式收集信息、生成草稿、查重，经确认后提交。当用户提供 PR 链接、要求\"创建 Issue / 关联 Issue / 给 PR 建 Issue\"，或用户直接描述问题、要求\"提单 / 生成草稿\"时触发此 skill。",
+      "localPath": "skills/gitcode-issue-gen",
+      "sourcePath": "infra/gitcode-issue-gen",
+      "officialSkillPackages": [
+        "infra-skills"
+      ],
+      "codexSupport": "codex-ready",
+      "notes": [
+        "requires matching Ascend/CANN environment for execution",
+        "may install tools or access network; keep user confirmation for mutations",
+        "GitCode API/network/token may be required"
+      ]
+    },
+    {
+      "name": "gitcode-issue-handler",
+      "description": "GitCode Issue 端到端处置工具，根据 Issue 内容自动判断走两条路径之一：(PR 路径) 克隆 fork → 代码定位 → 最小改动 → 跑测试 → 提交并推送 → 创建 PR，覆盖 bug 修复 / 功能增强 / 文档补全等任何需要代码变更的诉求；(Comment 路径) 仅克隆上游主仓只读分析 → 起草答复 → 提交评论，覆盖答疑 / 设计澄清 / 用法说明等不需改代码的诉求。当用户提到\"处理 Issue / 跟进 Issue / 从 Issue 提 PR / 端到端处理 Issue / 修复 Issue\"或仅给出 issue_url 让 Claude 判断要不要改代码时使用此 skill；用户明确说\"只回复 / 答疑 / 评论回复 / 不改代码\"则直接走 Comment 路径。",
+      "localPath": "skills/gitcode-issue-handler",
+      "sourcePath": "infra/gitcode-issue-handler",
+      "officialSkillPackages": [
+        "infra-skills"
+      ],
+      "codexSupport": "codex-ready",
+      "notes": [
+        "requires matching Ascend/CANN environment for execution",
+        "may install tools or access network; keep user confirmation for mutations",
+        "GitCode API/network/token may be required"
+      ]
+    },
+    {
+      "name": "gitcode-pr-handler",
+      "description": "根据 GitCode PR 的代码变更，重新生成符合约定式提交规范的 PR 标题与符合仓库 PR 模板的 PR 描述（body），然后通过 GitCode API 写回 PR。当用户提供 PR 链接、要求\"更新 PR / 生成标题 / 生成描述 / 改 PR 文案 / 重写 PR 标题描述\"时触发此 skill。",
+      "localPath": "skills/gitcode-pr-handler",
+      "sourcePath": "infra/gitcode-pr-handler",
+      "officialSkillPackages": [
+        "infra-skills"
+      ],
+      "codexSupport": "codex-ready",
+      "notes": [
+        "requires matching Ascend/CANN environment for execution",
+        "may install tools or access network; keep user confirmation for mutations",
+        "GitCode API/network/token may be required"
+      ]
+    },
+    {
+      "name": "gitcode-toolkit",
+      "description": "GitCode 协作通用基础参考（内部参考，不直接触发）。提供 GitCode API、Token 配置、URL 解析、日志规范、变更展示，Git 克隆/分支/diff/log/remote 通用操作，以及 PR 创建工作流和 Issue 创建工作流（API/模板/head 格式等）等共享文档与确定性脚本。供 gitcode-pr-handler、gitcode-issue-gen、gitcode-issue-handler 等 GitCode 协作类 skill 引用使用，本 skill 自身不响应用户触发。",
+      "localPath": "skills/gitcode-toolkit",
+      "sourcePath": "infra/gitcode-toolkit",
+      "officialSkillPackages": [
+        "infra-skills"
+      ],
+      "codexSupport": "codex-ready",
+      "notes": [
+        "requires matching Ascend/CANN environment for execution",
+        "may install tools or access network; keep user confirmation for mutations",
+        "GitCode API/network/token may be required"
+      ]
+    },
+    {
+      "name": "model-infer-fusion",
+      "description": "基于 PyTorch 框架的昇腾 NPU 模型推理融合算子优化技能。分析模型代码，识别可替换为 torch_npu 融合算子的计算模式，生成替换方案。触发场景：torch_npu 融合算子替换、MoE/Attention/FFN/Norm 等模块的推理算子适配、torch_npu API 使用咨询。基于仓库已有模型的融合算子经验，按计算语义推荐最佳方案。",
+      "localPath": "skills/model-infer-fusion",
+      "sourcePath": "model/model-infer-fusion",
+      "officialSkillPackages": [
+        "model-infer-skills"
+      ],
+      "codexSupport": "codex-ready",
+      "notes": [
+        "requires matching Ascend/CANN environment for execution",
+        "GitCode API/network/token may be required"
+      ]
+    },
+    {
+      "name": "model-infer-graph-mode",
+      "description": "基于 PyTorch 框架的昇腾 NPU 模型推理图模式适配技能。将模型适配到 torch.compile 图模式以加速推理性能。触发场景：npugraph_ex 或 GE 图模式适配、torch.compile 在昇腾 NPU 上的使用、图中断（Graph Break）修复、aclgraph 图编译问题。LLM 模型的图模式适配优先阅读 LLM 模型改造指南。",
+      "localPath": "skills/model-infer-graph-mode",
+      "sourcePath": "model/model-infer-graph-mode",
+      "officialSkillPackages": [
+        "model-infer-skills"
+      ],
+      "codexSupport": "codex-ready",
+      "notes": [
+        "requires matching Ascend/CANN environment for execution",
+        "GitCode API/network/token may be required"
+      ]
+    },
+    {
+      "name": "model-infer-harmony",
+      "description": "麒麟 NPU 端侧（Kirin9030 / HarmonyOS）ASR 模型 4bit W4A16 量化、omg 离线模型转换与 CANNPAK 打包全流程技能。覆盖 dopt PTQ 标定 → 导量化参数 → 导 ONNX → 图改写 → MatMul 补维 → 容器内 omg 转 omc → 多 omc 打包成端侧单 bin，并含量化精度修复与转换报错调试。触发：当用户在 Kirin9030 NPU 上量化部署 ASR 的 encoder / decoder / 标点（punc）模型、把浮点 PyTorch 模型转成端侧 omc、遇到 UINT4 越界 / MatMul don't support / GatherV2D INT64 / 容器 glibc 等 omg 转换报错或端侧精度问题、或需要把多个 omc 打包成端侧单文件时使用。不覆盖端侧推理代码实现，也不覆盖上游浮点模型训练。",
+      "localPath": "skills/model-infer-harmony",
+      "sourcePath": "model/model-infer-harmony",
+      "officialSkillPackages": [
+        "model-infer-harmony-skills"
+      ],
+      "codexSupport": "codex-ready",
+      "notes": [
+        "requires matching Ascend/CANN environment for execution"
+      ]
+    },
+    {
+      "name": "model-infer-kvcache",
+      "description": "基于 PyTorch 框架的昇腾 NPU 模型推理 KVCache 优化技能。分析并改造 LLM 推理模型的 KVCache 实现，覆盖 Legacy 连续缓存与分页注意力（Paged Attention）配 FA 融合算子、MLA 压缩缓存、SlidingWindow / 多 attn_type 混合。触发场景：KVCache 管理实现、分页注意力接入、KV 压缩、FA 融合算子、OOM / 性能问题、block_table / slot_mapping 构造。支持框架部署与独立部署两种模式。",
+      "localPath": "skills/model-infer-kvcache",
+      "sourcePath": "model/model-infer-kvcache",
+      "officialSkillPackages": [
+        "model-infer-skills"
+      ],
+      "codexSupport": "codex-ready",
+      "notes": [
+        "requires matching Ascend/CANN environment for execution"
+      ]
+    },
+    {
+      "name": "model-infer-migrator",
+      "description": "基于 PyTorch 框架的昇腾 NPU 模型推理适配与部署基线技能。支持两种部署模式：框架部署模式（接入 cann-recipes-infer 的 executor/core/）和独立部署模式（自管 Runner 不依赖框架）。从 HF 链接或本地代码适配为可运行的标准模型目录，并采集性能基线。触发场景：新模型适配到昇腾 NPU 推理框架、已有模型的部署基线采集、模型迁移和初始跑通验证。",
+      "localPath": "skills/model-infer-migrator",
+      "sourcePath": "model/model-infer-migrator",
+      "officialSkillPackages": [
+        "model-infer-skills"
+      ],
+      "codexSupport": "codex-ready",
+      "notes": [
+        "requires matching Ascend/CANN environment for execution"
+      ]
+    },
+    {
+      "name": "model-infer-multi-stream",
+      "description": "基于 PyTorch 框架的昇腾 NPU 模型推理多流整网优化技能。用于分析和实施模型的多流优化、双流、stream overlap、控核与 TorchAir 多流改造。先做整网模块 DAG 与模块间并行性分析，再做每个模块的算子级分析、开发调试和验收。触发场景包括：多流优化、双流、stream overlap、控核、整网 DAG、模块拆解、NPU 多流、TorchAir 多流、limit_core_num、多流改造调试。",
+      "localPath": "skills/model-infer-multi-stream",
+      "sourcePath": "model/model-infer-multi-stream",
+      "officialSkillPackages": [
+        "model-infer-skills"
+      ],
+      "codexSupport": "codex-ready",
+      "notes": [
+        "requires matching Ascend/CANN environment for execution",
+        "GitCode API/network/token may be required"
+      ]
+    },
+    {
+      "name": "model-infer-parallel-analysis",
+      "description": "基于 PyTorch 框架的昇腾 NPU 模型推理并行策略分析技能。分析模型架构参数和昇腾硬件规格，推荐最优的 TP/EP/DP 并行配置（parallel_config）。触发场景：新模型需要确定并行策略、现有配置需要优化、部署卡数或硬件变更后需要重新评估。输出为结构化的 parallel_config 推荐及定量依据。",
+      "localPath": "skills/model-infer-parallel-analysis",
+      "sourcePath": "model/model-infer-parallel-analysis",
+      "officialSkillPackages": [
+        "model-infer-skills"
+      ],
+      "codexSupport": "codex-ready",
+      "notes": [
+        "requires matching Ascend/CANN environment for execution"
+      ]
+    },
+    {
+      "name": "model-infer-parallel-impl",
+      "description": "基于 PyTorch 框架的昇腾 NPU 模型推理并行切分实施技能。根据已确认的 parallel_config，实施模型代码的并行化改造，包括并行线性层替换、MoE 并行模式适配、通信组创建、Embedding/LMHead 并行、YAML 配置生成和权重转换。支持 infer 仓框架部署与独立部署两种模式。触发场景：model-infer-parallel-analysis 完成后需要实施改造、现有模型需要支持新的并行配置。",
+      "localPath": "skills/model-infer-parallel-impl",
+      "sourcePath": "model/model-infer-parallel-impl",
+      "officialSkillPackages": [
+        "model-infer-skills"
+      ],
+      "codexSupport": "codex-ready",
+      "notes": [
+        "requires matching Ascend/CANN environment for execution"
+      ]
+    },
+    {
+      "name": "model-infer-precision-debug",
+      "description": "基于 PyTorch 框架的昇腾 NPU 模型推理精度问题诊断技能。当前主要覆盖 KVCache / FlashAttention 相关精度问题，包括 Prefill/Decode 对齐、cache 更新错误、slot/block mapping 错误、attention 路径切换后的精度异常等。触发场景：优化改造后精度验证未通过、模型输出与基线存在显著偏差、Prefill 和 Decode 精度表现不一致、出现 NaN/Inf、量化模式下精度异常放大等。",
+      "localPath": "skills/model-infer-precision-debug",
+      "sourcePath": "model/model-infer-precision-debug",
+      "officialSkillPackages": [
+        "model-infer-skills"
+      ],
+      "codexSupport": "codex-ready",
+      "notes": []
+    },
+    {
+      "name": "model-infer-prefetch",
+      "description": "为模型添加 torch_npu.npu_prefetch 权重预取优化特性。触发：profiling 显示 MatMul/QBMM/GMM 算子存在 memory-bound 热点、需要为模型添加权重预取、将 prefetch 模式迁移到新模型时使用。",
+      "localPath": "skills/model-infer-prefetch",
+      "sourcePath": "model/model-infer-prefetch",
+      "officialSkillPackages": [
+        "model-infer-skills"
+      ],
+      "codexSupport": "codex-ready",
+      "notes": [
+        "requires matching Ascend/CANN environment for execution"
+      ]
+    },
+    {
+      "name": "model-infer-quantization",
+      "description": "infer 仓模型量化适配改造技能。分析并接入既有 compressed-tensors 量化方案和权重，完成量化产物契约检查、结构参考匹配、量化 runtime 映射、权重加载、post-load 处理、融合算子量化冲突回退、真实生效验证和收益评估。触发：模型优化流程中的量化初评估、量化改造任务、compressed-tensors 量化产物接入时使用；不重新设计上游量化算法，不实现 compressed-tensors 之外的量化路线。",
+      "localPath": "skills/model-infer-quantization",
+      "sourcePath": "model/model-infer-quantization",
+      "officialSkillPackages": [
+        "model-infer-skills"
+      ],
+      "codexSupport": "codex-ready",
+      "notes": []
+    },
+    {
+      "name": "model-infer-runtime-debug",
+      "description": "基于 PyTorch 框架的昇腾 NPU 模型推理运行时错误诊断与修复技能。系统化排查模型加载、初始化、推理执行全链路的运行时错误，包括 aicore timeout、HCCL 通信错误、OOM、算子约束违反、推理卡住等。触发场景：NPU 运行时错误（RuntimeError、aicore timeout 507014、HCCL timeout、device synchronize 失败、kernel crash、EZ9999/EE9999 错误码）、推理过程卡住不返回、权重加载阶段 crash、模型加载成功但 forward 失败、分布式推理某些 rank 挂死等。",
+      "localPath": "skills/model-infer-runtime-debug",
+      "sourcePath": "model/model-infer-runtime-debug",
+      "officialSkillPackages": [
+        "model-infer-skills"
+      ],
+      "codexSupport": "codex-ready",
+      "notes": [
+        "requires matching Ascend/CANN environment for execution"
+      ]
+    },
+    {
+      "name": "model-infer-superkernel",
+      "description": "SuperKernel 适配技能。当用户需要启用 SuperKernel 算子二进制融合技术优化 NPU 推理性能时使用此技能。触发场景包括：用户询问 SuperKernel、算子融合、二进制融合、启用 superkernel、superkernel_scope、减少任务调度开销、优化 decode 性能等。SuperKernel 仅支持 ge_graph 模式、Atlas A3 硬件、PyTorch 框架，且仅在 decode 阶段生效。",
+      "localPath": "skills/model-infer-superkernel",
+      "sourcePath": "model/model-infer-superkernel",
+      "officialSkillPackages": [
+        "model-infer-skills"
+      ],
+      "codexSupport": "codex-ready",
+      "notes": [
+        "requires matching Ascend/CANN environment for execution"
+      ]
+    },
+    {
+      "name": "model-train-accuracy-debug",
+      "description": "用于定位 PyTorch on NPU 大模型训练中“有基线可对照”的精度异常定位。只要用户提到训练精度异常、 loss/grad norm 曲线偏离、换算子/并行策略/分支/CANN 版本后精度异常，或出现 NaN 且有基线对照，就应触发本技能，并按代码审查 + detect_anomaly + msprobe dump/compare 流程定界根因。",
+      "localPath": "skills/model-train-accuracy-debug",
+      "sourcePath": "model/model-train-accuracy-debug",
+      "officialSkillPackages": [
+        "model-train-skills"
+      ],
+      "codexSupport": "codex-ready",
+      "notes": [
+        "requires matching Ascend/CANN environment for execution",
+        "may install tools or access network; keep user confirmation for mutations"
+      ]
+    },
+    {
+      "name": "model-train-oom-analysis",
+      "description": "用于诊断 PyTorch on NPU 大模型训练中的 NPU OOM（Out of Memory）问题。当用户报告训练因内存不足崩溃、出现 OOM 相关错误（OutOfMemoryError / NPU out of memory / workspace allocator / HCCL memory）、或需要进行训练内存优化时，触发本技能。按照日志分类 → 静态估算 → snapshot 深度分析 → 优化建议的流程定位和解决问题。",
+      "localPath": "skills/model-train-oom-analysis",
+      "sourcePath": "model/model-train-oom-analysis",
+      "officialSkillPackages": [
+        "model-train-skills"
+      ],
+      "codexSupport": "codex-ready",
+      "notes": [
+        "requires matching Ascend/CANN environment for execution",
+        "GitCode API/network/token may be required"
+      ]
+    },
+    {
+      "name": "npu-arch",
+      "description": "Ascend NPU 架构知识查询技能。通过芯片型号映射、架构代际划分和 archXX 特性说明，帮助判断目标平台能力、特性支持与条件编译策略。当需要确认芯片型号、NpuArch/SocVersion、架构差异、特性支持或编译分支条件时使用。",
+      "localPath": "skills/npu-arch",
+      "sourcePath": "ops/npu-arch",
+      "officialSkillPackages": [
+        "ops-direct-invoke-skills",
+        "ops-registry-invoke-skills",
+        "triton-op-generator-skills"
+      ],
+      "codexSupport": "codex-ready",
+      "notes": []
+    },
+    {
+      "name": "ops-precision-standard",
+      "description": "算子精度标准。描述 Ascend C 算子各种 dtype 输出对应的精度比对标准（atol/rtol）。当需要（1）评估算子精度是否达标，（2）编写 ST 测试验证精度，（3）处理 FP16/FP32/BF16 等不同数据类型精度问题，（4）确认算子精度验收标准时触发。",
+      "localPath": "skills/ops-precision-standard",
+      "sourcePath": "ops/ops-precision-standard",
+      "officialSkillPackages": [
+        "ops-direct-invoke-skills",
+        "ops-registry-invoke-skills"
+      ],
+      "codexSupport": "codex-ready",
+      "notes": []
+    },
+    {
+      "name": "ops-profiling",
+      "description": "NPU 性能采集与分析，融合 msprof 算子级瓶颈定位与 kernel-level 对比测试，用于采集算子性能数据、对比自定义算子 vs 标杆加速比、定位性能瓶颈并给出优化建议。当用户在算子开发过程中提到\"上板性能\"、\"算子性能测试\"、\"硬件性能验证\"、\"NPU性能采集\"、\"NPU profiling\"、\"性能对比\"、\"加速比\"等场景时触发。",
+      "localPath": "skills/ops-profiling",
+      "sourcePath": "ops/ops-profiling",
+      "officialSkillPackages": [
+        "ops-direct-invoke-skills",
+        "ops-registry-invoke-skills"
+      ],
+      "codexSupport": "codex-ready",
+      "notes": [
+        "requires matching Ascend/CANN environment for execution"
+      ]
+    },
+    {
+      "name": "ops-simulator",
+      "description": "NPU 仿真器技能。提供 CANN Simulator 的使用指导，包括精度仿真、性能仿真、流水线分析。当需要在无 NPU 硬件环境下验证算子功能、分析性能瓶颈、定位精度问题时使用。也用于分析已有的 cannsim 性能报告（summary.json）并给出优化建议。",
+      "localPath": "skills/ops-simulator",
+      "sourcePath": "ops/ops-simulator",
+      "officialSkillPackages": [],
+      "codexSupport": "codex-ready",
+      "notes": [
+        "requires matching Ascend/CANN environment for execution"
+      ]
+    },
+    {
+      "name": "ops-spec-gen",
+      "description": "生成或校验算子 spec.yaml（算子的 L0 数学约束唯一真值）。当用户提及：生成 spec.yaml、新算子 spec 骨架、scaffold spec、validate spec.yaml、spec schema 校验、算子规格校验 时触发。",
+      "localPath": "skills/ops-spec-gen",
+      "sourcePath": "ops/ops-spec-gen",
+      "officialSkillPackages": [
+        "ops-registry-invoke-skills"
+      ],
+      "codexSupport": "codex-ready",
+      "notes": [
+        "requires matching Ascend/CANN environment for execution",
+        "may install tools or access network; keep user confirmation for mutations"
+      ]
+    },
+    {
+      "name": "perf-analyzer",
+      "description": "分析 PyPTO 算子的性能指标。用于分析 PyPTO 算子的性能指标，从性能数据文件中提取关键指标，计算性能评级，并提供性能瓶颈分析和优化建议。 当需要分析 PyPTO 算子性能数据、计算性能评级或定位性能瓶颈时使用此技能。",
+      "localPath": "skills/pypto-op-perf-tune/perf-analyzer",
+      "sourcePath": "ops/pypto-op-perf-tune/perf-analyzer",
+      "officialSkillPackages": [],
+      "codexSupport": "codex-ready",
+      "notes": []
+    },
+    {
+      "name": "precision-binary-search",
+      "description": "PyPTO 算子上板二分定位法。通过在 kernel 函数中添加检查点 tensor 作为输入参数进行原地修改，对比中间结果的精度。专注：修改 kernel 签名 → 修改 golden 返回值 → 修改测试函数 → 二分定位首个出错的 op。 当需要在上板场景用二分定位法定位 PyPTO 算子精度首个出错 Op 时使用此技能。",
+      "localPath": "skills/pypto-precision-compare/precision-binary-search",
+      "sourcePath": "ops/pypto-precision-compare/precision-binary-search",
+      "officialSkillPackages": [],
+      "codexSupport": "codex-ready",
+      "notes": []
+    },
+    {
+      "name": "precision-pass",
+      "description": "Pass精度校验子技能。开启PreCheck/PostCheck进行全链路Pass校验，通过pass校验定位报错Pass，使用pass_compare逐Op对比定位具体问题Op，支持动态shape上板数据打印验证和IR图分析辅助定位。 当需要通过 Pass 校验（PreCheck/PostCheck）定位报错 Pass 或具体问题 Op 时使用此技能。",
+      "localPath": "skills/pypto-precision-compare/precision-pass",
+      "sourcePath": "ops/pypto-precision-compare/precision-pass",
+      "officialSkillPackages": [],
+      "codexSupport": "codex-ready",
+      "notes": [
+        "may install tools or access network; keep user confirmation for mutations"
+      ]
+    },
+    {
+      "name": "precision-verify",
+      "description": "PyPTO 算子精精度工具对比法。使用 pypto.pass_verify_save 和 torch.save 保存中间结果到文件，然后使用对比工具分析。专注：插入检查点 → 运行测试 → 对比分析 → 定位首个失败点。 当需要用 pass_verify_save/torch.save 保存中间结果并对比定位精度问题时使用此技能。",
+      "localPath": "skills/pypto-precision-compare/precision-verify",
+      "sourcePath": "ops/pypto-precision-compare/precision-verify",
+      "officialSkillPackages": [],
+      "codexSupport": "codex-ready",
+      "notes": []
+    },
+    {
+      "name": "pypto-api-explore",
+      "description": "探索 PyPTO API，为算子开发提供 API 映射、约束检查和 Tiling 需求分析。当需要查找 PyPTO 是否支持某个操作、验证 API 约束、分析算子可行性时使用。触发词：API 探索、查找 API、PyPTO 有没有 xxx、支持什么 dtype、约束是什么、tiling 怎么配、API 映射、可行性分析、这个算子能做吗。",
+      "localPath": "skills/pypto-api-explore",
+      "sourcePath": "ops/pypto-api-explore",
+      "officialSkillPackages": [
+        "pypto-op-orchestrator-skills"
+      ],
+      "codexSupport": "codex-ready",
+      "notes": []
+    },
+    {
+      "name": "pypto-golden-generate",
+      "description": "当需要生成 golden 参考实现时使用此 skill。基于算子规格信息，生成纯 PyTorch golden 参考实现 `{op}_golden.py`，导出 `{op}_golden()` 函数，作为精度验证基准。触发词：生成 golden、生成参考实现、写 golden 函数、golden script、golden reference、reference implementation、generate golden、torch 参考、验证基准、baseline implementation、写验证代码、'帮我写 golden'、golden.py、参考代码。",
+      "localPath": "skills/pypto-golden-generate",
+      "sourcePath": "ops/pypto-golden-generate",
+      "officialSkillPackages": [
+        "pypto-op-orchestrator-skills"
+      ],
+      "codexSupport": "codex-ready",
+      "notes": []
+    },
+    {
+      "name": "pypto-intent-understand",
+      "description": "PyPTO 算子需求意图理解。将用户的自然语言算子描述转化为结构化需求文档。当用户描述要开发、实现、创建某个算子时触发，例如：'开发一个 sinh 算子'、'实现 GELU'、'参考 PyTorch 的 F.scaled_dot_product_attention'、'根据论文实现算子'、'创建自定义算子",
+      "localPath": "skills/pypto-intent-understand",
+      "sourcePath": "ops/pypto-intent-understand",
+      "officialSkillPackages": [
+        "pypto-op-orchestrator-skills"
+      ],
+      "codexSupport": "codex-ready",
+      "notes": []
+    },
+    {
+      "name": "pypto-op-design",
+      "description": "当需要设计 PyPTO 算子实现方案时使用。通过迭代式约束收敛，生成 DESIGN.md（含 API 映射、精度路由、Tiling 推导、Loop 结构设计）。触发词：生成设计方案、生成 design、设计方案、写 DESIGN.md、算子设计、API 映射、Tiling 策略、tiling 推导、Loop 结构、数据流设计、精度路由。",
+      "localPath": "skills/pypto-op-design",
+      "sourcePath": "ops/pypto-op-design",
+      "officialSkillPackages": [
+        "pypto-op-orchestrator-skills"
+      ],
+      "codexSupport": "codex-ready",
+      "notes": []
+    },
+    {
+      "name": "pypto-op-develop",
+      "description": "当需要编写 PyPTO 算子实现时使用此 skill。基于需求规格、设计方案和参考实现，生成完整可运行的 PyPTO 算子实现与配套测试、文档。触发词：实现算子、写 kernel、编写实现、写 impl、算子编码、开始编码、code the op、写 test、生成测试、写实现代码、op develop、kernel 实现。",
+      "localPath": "skills/pypto-op-develop",
+      "sourcePath": "ops/pypto-op-develop",
+      "officialSkillPackages": [
+        "pypto-op-orchestrator-skills"
+      ],
+      "codexSupport": "codex-ready",
+      "notes": [
+        "requires matching Ascend/CANN environment for execution"
+      ]
+    },
+    {
+      "name": "pypto-op-perf-tune",
+      "description": "PyPTO 算子性能分析和自动调优技能。用于对生成及新开发的算子进行性能分析及自动调优，包括算子用例执行及精度校验、性能数据采集及分析、分步骤性能调优和生成性能分析报告。当用户需要分析 PyPTO 算子性能、进行性能调优、生成性能报告时使用此技能。触发词：算子性能调优、性能分析、自动调优、性能优化、泳道图分析。",
+      "localPath": "skills/pypto-op-perf-tune",
+      "sourcePath": "ops/pypto-op-perf-tune",
+      "officialSkillPackages": [
+        "pypto-op-orchestrator-skills"
+      ],
+      "codexSupport": "codex-ready",
+      "notes": [
+        "requires matching Ascend/CANN environment for execution",
+        "GitCode API/network/token may be required"
+      ]
+    },
+    {
+      "name": "pypto-precision-compare",
+      "description": "PyPTO 算子精度问题调试技能。提供两种精度对比方法：文件保存方法（使用 pypto.pass_verify_save 和 torch.save）和二分对比方法（使用检查点 tensor）。当需要调试 PyPTO 算子精度、定位精度差异来源、进行中间结果对比时使用此技能。",
+      "localPath": "skills/pypto-precision-compare",
+      "sourcePath": "ops/pypto-precision-compare",
+      "officialSkillPackages": [
+        "pypto-op-orchestrator-skills"
+      ],
+      "codexSupport": "codex-ready",
+      "notes": [
+        "may install tools or access network; keep user confirmation for mutations"
+      ]
+    },
+    {
+      "name": "pypto-precision-debug",
+      "description": "PyPTO 算子精度问题排查技能。专注于用户代码层面的语法逻辑检查和规避方法尝试。当算子精度验证失败、输出结果异常、计算错误、数值偏差、或任何与精度相关的问题时使用此技能。",
+      "localPath": "skills/pypto-precision-debug",
+      "sourcePath": "ops/pypto-precision-debug",
+      "officialSkillPackages": [
+        "pypto-op-orchestrator-skills"
+      ],
+      "codexSupport": "codex-ready",
+      "notes": []
+    },
+    {
+      "name": "runtime_migration",
+      "description": "CUDA 应用迁移到 CANN 平台指南，仅用于用户自身合法拥有或已获授权的代码资产。当用户请求将其有权处理的应用程序迁移到华为昇腾 NPU、询问迁移可行性分析、或需要帮助改写相关代码为 CANN Runtime 时触发此技能。",
+      "localPath": "skills/runtime_migration",
+      "sourcePath": "runtime/runtime_migration",
+      "officialSkillPackages": [],
+      "codexSupport": "codex-ready",
+      "notes": [
+        "requires matching Ascend/CANN environment for execution"
+      ]
+    },
+    {
+      "name": "tilelang-api-best-practices",
+      "description": "TileLang Ascend API 使用最佳实践。提供内存分配、数据搬运、矩阵计算、归约、元素级运算、同步、调度原语等 API 的正确用法和最佳实践。触发：使用 TileLang API 编写 Ascend NPU kernel 时或遇到 API 相关问题时。",
+      "localPath": "skills/tilelang-api-best-practices",
+      "sourcePath": "ops/tilelang-api-best-practices",
+      "officialSkillPackages": [
+        "tilelang-op-orchestrator-skills"
+      ],
+      "codexSupport": "codex-ready",
+      "notes": []
+    },
+    {
+      "name": "tilelang-env-check",
+      "description": "TileLang-Ascend 环境检查与配置验证技能。检查代码仓库完整性、编译安装状态、环境变量配置，并运行简单测试验证环境。发现问题会自动调用相关 skill 进行修复，并按依赖顺序重新执行后续步骤。触发关键词：\"环境检查\"、\"检查环境\"、\"验证环境\"、\"环境配置\"、\"环境搭建\"、\"env check\"、\"check environment\"、\"verify environment\"、\"setup environment\"。",
+      "localPath": "skills/tilelang-env-check",
+      "sourcePath": "ops/tilelang-env-check",
+      "officialSkillPackages": [
+        "tilelang-op-orchestrator-skills"
+      ],
+      "codexSupport": "codex-ready",
+      "notes": [
+        "requires matching Ascend/CANN environment for execution",
+        "may install tools or access network; keep user confirmation for mutations"
+      ]
+    },
+    {
+      "name": "tilelang-op-design",
+      "description": "根据算子需求生成 TileLang-Ascend 算子设计文档（design.md）。涵盖编程模式选型（Developer/Expert/混合）、API 映射、内存层级规划、Tiling 策略、循环结构、同步策略、验证方案等。触发：设计算子、生成 design.md、算子方案设计、新算子开发、算子实现方案。",
+      "localPath": "skills/tilelang-op-design",
+      "sourcePath": "ops/tilelang-op-design",
+      "officialSkillPackages": [
+        "tilelang-op-orchestrator-skills"
+      ],
+      "codexSupport": "codex-ready",
+      "notes": []
+    },
+    {
+      "name": "tilelang-op-develop",
+      "description": "基于设计文档生成 TileLang-Ascend 算子实现代码与测试。从 design.md 中提取关键信息，结合 examples/ 中的参考实现生成可运行代码。触发：实现算子、写 kernel、生成代码、算子编码、根据设计文档实现。",
+      "localPath": "skills/tilelang-op-develop",
+      "sourcePath": "ops/tilelang-op-develop",
+      "officialSkillPackages": [
+        "tilelang-op-orchestrator-skills"
+      ],
+      "codexSupport": "codex-ready",
+      "notes": []
+    },
+    {
+      "name": "tilelang-op-test-design",
+      "description": "TileLang-Ascend 算子测试设计技能。支持多种场景：(1) 从 design.md 设计测试配置 (2) 从 custom/{op}/*.py 补充测试 (3) 手动提供算子信息生成测试 (4) 测试覆盖率分析。理解算子实现逻辑后智能判断测试策略。触发：设计算子测试、生成测试用例、补充测试、测试覆盖率不足。",
+      "localPath": "skills/tilelang-op-test-design",
+      "sourcePath": "ops/tilelang-op-test-design",
+      "officialSkillPackages": [
+        "tilelang-op-orchestrator-skills"
+      ],
+      "codexSupport": "codex-ready",
+      "notes": []
+    },
+    {
+      "name": "tilelang-perf-optimization",
+      "description": "TileLang 算子性能调优与潜在性能劣化模式检查。提供性能数据采集、瓶颈诊断、优化实施、效果验证能力；也用于生成或评审算子时对照常见性能劣化模式示例检查当前 kernel 代码。触发：算子精度通过后需要优化性能、性能不及预期时。",
+      "localPath": "skills/tilelang-perf-optimization",
+      "sourcePath": "ops/tilelang-perf-optimization",
+      "officialSkillPackages": [
+        "tilelang-op-orchestrator-skills"
+      ],
+      "codexSupport": "codex-ready",
+      "notes": [
+        "requires matching Ascend/CANN environment for execution"
+      ]
+    },
+    {
+      "name": "tilelang-programming-model-guide",
+      "description": "TileLang Ascend Developer/Expert 模式选择与 pass_configs 配置指南。当需要确定编程模式、配置 pass_configs、或在两种模式之间转换时触发。API 详情请参考 tilelang-api-best-practices skill。",
+      "localPath": "skills/tilelang-programming-model-guide",
+      "sourcePath": "ops/tilelang-programming-model-guide",
+      "officialSkillPackages": [
+        "tilelang-op-orchestrator-skills"
+      ],
+      "codexSupport": "codex-ready",
+      "notes": []
+    },
+    {
+      "name": "tilelang-review",
+      "description": "检查代码格式是否符合 CI 规则。适用于 TileLang NPU kernel 开发时的代码规范检查和格式化。自动检测并安装缺失工具（ruff、clang-format），先运行检查生成报告，使用醒目方式询问用户后，仅在用户同意时执行修复。工作流程：检测环境→自动安装缺失工具→运行检查→生成报告→醒目询问→用户确认→执行修复。使用此技能当：用户要求\"格式检查\"、\"格式化代码\"、\"代码格式化\"、\"检查代码格式\"、\"代码 review\"、\"代码审查\"、\"修复格式\"、\"fix format\"、\"lint code\"、\"检查代码规范\"、提交 PR 前验证、或需要检查 Python/C++ 代码风格时。",
+      "localPath": "skills/tilelang-review",
+      "sourcePath": "ops/tilelang-review",
+      "officialSkillPackages": [
+        "tilelang-op-orchestrator-skills"
+      ],
+      "codexSupport": "codex-ready",
+      "notes": [
+        "may install tools or access network; keep user confirmation for mutations"
+      ]
+    },
+    {
+      "name": "tilelang-submodule-pull",
+      "description": "Automatically pull tilelang repository and its third-party code. Provides scheduled pull script supporting git pull --recurse-submodules and git submodule update --init --recursive with automatic error detection and retry. Triggers when user mentions \"重新拉取三方库\", \"自动重拉\", \"重新拉取子模块\", \"auto retry pull\", \"pull submodules\", \"update third-party libs\", \"retry pulling third-party libs\", \"auto pull code\" or similar keywords.",
+      "localPath": "skills/tilelang-submodule-pull",
+      "sourcePath": "ops/tilelang-submodule-pull",
+      "officialSkillPackages": [
+        "tilelang-op-orchestrator-skills"
+      ],
+      "codexSupport": "codex-ready",
+      "notes": []
+    },
+    {
+      "name": "torch-ascendc-op-extension",
+      "description": "将已有 Ascend C <<<>>> 直调工程通过 TORCH_LIBRARY 对接到 PyTorch，实现 torch.ops.npu.xxx() 调用。触发：用户提到 TORCH_LIBRARY、.asc 对接 PyTorch、Python 调用 Ascend C 算子、注册到 torch、算子接入 PyTorch dispatch、PyTorch binding、torch extension、或想在 Python 中用 torch.ops.xxx() 调用已有 Ascend C kernel。不适用：从零建工程（用 ascendc-direct-invoke-template）；注册调用转直调（用 ascendc-registry-invoke-to-direct-invoke）。",
+      "localPath": "skills/torch-ascendc-op-extension",
+      "sourcePath": "ops/torch-ascendc-op-extension",
+      "officialSkillPackages": [
+        "ops-direct-invoke-skills"
+      ],
+      "codexSupport": "codex-ready",
+      "notes": [
+        "requires matching Ascend/CANN environment for execution"
+      ]
+    },
+    {
+      "name": "torch-custom-ops-guide",
+      "description": "自定义算子入图完整指南。覆盖从零开发、Eager 算子适配 npugraph_ex 图模式（torch.library.custom_op / torch.library.Library）、Meta 推导函数编写等全流程。适用于两种纯 Python 自定义算子注册场景。关键词：custom_op、torch.library.Library、register_fake、meta、mutates_args。",
+      "localPath": "skills/torch-custom-ops-guide",
+      "sourcePath": "graph/torch-custom-ops-guide",
+      "officialSkillPackages": [
+        "torch-npugraph-ex-skills"
+      ],
+      "codexSupport": "codex-ready",
+      "notes": []
+    },
+    {
+      "name": "torch-npugraph-ex-compile-error-diagnosis",
+      "description": "PyTorch 昇腾 NPU npugraph_ex 编译期报错诊断。覆盖 torch.compile 触发后 TorchDynamo / FX / AOTAutograd / npugraph_ex backend / ACL graph capture 阶段的报错排查，包括 Unsupported / graph break / BackendCompilerFailed / Meta 推导失败 / capture 失败等场景。本 skill 由 dfx-triage 路由进入。触发：当用户遇到 npugraph_ex 入图失败、graph break、BackendCompilerFailed、Meta 推导失败或 capture 失败时加载。关键词：入图失败、断图、graph break、BackendCompilerFailed、Meta、FakeTensor、aot_eager、capture。",
+      "localPath": "skills/torch-npugraph-ex-compile-error-diagnosis",
+      "sourcePath": "graph/torch-npugraph-ex-compile-error-diagnosis",
+      "officialSkillPackages": [
+        "torch-npugraph-ex-skills"
+      ],
+      "codexSupport": "codex-ready",
+      "notes": [
+        "requires matching Ascend/CANN environment for execution",
+        "GitCode API/network/token may be required"
+      ]
+    },
+    {
+      "name": "torch-npugraph-ex-dfx-triage",
+      "description": "PyTorch 昇腾 NPU npugraph_ex DFX 问题分诊入口。统一执行首轮全量日志收集与最少闭环信息核对，按报错栈和现象将问题路由到 compile-error / runtime-error / accuracy / performance 四个专科 sub-skill。本 skill 不输出最终诊断结论，只完成「采集 + 分类 + 加载下游 skill」。触发：当用户报告 npugraph_ex 相关报错、断图、精度差异或性能回退、需要 debug/dump 定位时加载。关键词：问题定位、报错、断图、精度、性能、debug、dump、aot_eager。",
+      "localPath": "skills/torch-npugraph-ex-dfx-triage",
+      "sourcePath": "graph/torch-npugraph-ex-dfx-triage",
+      "officialSkillPackages": [
+        "torch-npugraph-ex-skills"
+      ],
+      "codexSupport": "codex-ready",
+      "notes": [
+        "requires matching Ascend/CANN environment for execution"
+      ]
+    },
+    {
+      "name": "torch-npugraph-ex-knowledge",
+      "description": "npugraph_ex（aclgraph）模式使用指南。采用 Capture & Replay 方式将算子任务下沉至 Device 执行，减少 Host 调度开销，适用于固定 shape 在线推理低延迟场景。涵盖模式配置、FX Pass、编译缓存、多流并行、内存复用、静态 Kernel 编译、限核、性能优化、调试定位、自定义算子入图等。关键词：npugraph_ex、aclgraph、backend=\\\"npugraph_ex\\\"、capture、replay、reduce-overhead、config.aclgraph_config。",
+      "localPath": "skills/torch-npugraph-ex-knowledge",
+      "sourcePath": "graph/torch-npugraph-ex-knowledge",
+      "officialSkillPackages": [
+        "torch-npugraph-ex-skills"
+      ],
+      "codexSupport": "codex-ready",
+      "notes": [
+        "requires matching Ascend/CANN environment for execution",
+        "GitCode API/network/token may be required"
+      ]
+    },
+    {
+      "name": "torch-npugraph-ex-performance-diagnosis",
+      "description": "PyTorch 昇腾 NPU npugraph_ex 性能诊断（FX 图静态审计，聚焦 reinplace 未命中导致的冗余 tensor move）。处理「5 step 全部通过、但推理慢/Device 利用率低」阶段：基于 TORCH_COMPILE_DEBUG=1 产出的 FX 图序列与 debug.log，定位图里冗余的 tensor move——重点是 reinplace_inplaceable_ops_pass（out-of-place→in-place）与 reinplace_input_mutated_ops（折叠输入侧 copy_）回填未完成留下的 copy_/clone/out-of-place 冗余，按成因分类区分输入侧 copy_ epilogue、auto_functionalized 物化 clone、多流校验失败三类。本 skill 由 dfx-triage 路由进入；**不**处理 graph break / recompile / guard failure（归 compile-error-diagnosis）。触发：当用户报告 npugraph_ex 推理慢、性能回退、怀疑图里有多余搬运/拷贝、reinplace 没生效时加载。关键词：性能、慢、tensormove、tensor move、reinplace、functionalize、copy_、clone、auto_functionalized、multi_stream、can_inplace、missed reinplacing、inplace_pass、input_inplace_pass、clone_input、TORCH_COMPILE_DEBUG。",
+      "localPath": "skills/torch-npugraph-ex-performance-diagnosis",
+      "sourcePath": "graph/torch-npugraph-ex-performance-diagnosis",
+      "officialSkillPackages": [],
+      "codexSupport": "codex-ready",
+      "notes": []
+    },
+    {
+      "name": "torch-npugraph-ex-runtime-error-diagnosis",
+      "description": "PyTorch 昇腾 NPU npugraph_ex 运行时报错诊断。覆盖 ACL graph 已 capture 成功之后，replay / kernel launch / 通信 / 内存 / device API 阶段的报错排查，包括 aclnnXxx 算子失败、HCCL 错误、stream/event 同步、segfault、device side assert、OOM 等场景。本 skill 由 dfx-triage 路由进入。触发：当用户遇到 npugraph_ex replay / aclnn / HCCL / stream / OOM 等运行时报错时加载。关键词：runtime、ACL、aclnn、HCCL、stream、event、device side assert、segfault、OOM、CANN plog。",
+      "localPath": "skills/torch-npugraph-ex-runtime-error-diagnosis",
+      "sourcePath": "graph/torch-npugraph-ex-runtime-error-diagnosis",
+      "officialSkillPackages": [
+        "torch-npugraph-ex-skills"
+      ],
+      "codexSupport": "codex-ready",
+      "notes": [
+        "requires matching Ascend/CANN environment for execution",
+        "GitCode API/network/token may be required"
+      ]
+    },
+    {
+      "name": "torch-npugraph-ex-template",
+      "description": "npugraph_ex 模式的 MRE（最小可复现示例）代码模板。包含标准 npugraph_ex 编译模板和 npugraph_ex 编译缓存（cache_compile）模板。触发：当用户需要从零生成 npugraph_ex 模式代码、做概念解释、对比分析或配置指导时加载。",
+      "localPath": "skills/torch-npugraph-ex-template",
+      "sourcePath": "graph/torch-npugraph-ex-template",
+      "officialSkillPackages": [
+        "torch-npugraph-ex-skills"
+      ],
+      "codexSupport": "codex-ready",
+      "notes": [
+        "requires matching Ascend/CANN environment for execution"
+      ]
+    },
+    {
+      "name": "torch-ops-profiler",
+      "description": "使用 torch_npu.profiler（warmup/active=5）维护 JSONL 用例并输出自定义算子 vs 标杆的性能报告。触发场景：需要 profiler 对比算子性能时。细节见正文与 examples/。",
+      "localPath": "skills/torch-ops-profiler",
+      "sourcePath": "ops/torch-ops-profiler",
+      "officialSkillPackages": [],
+      "codexSupport": "codex-ready",
+      "notes": [
+        "requires matching Ascend/CANN environment for execution"
+      ]
+    },
+    {
+      "name": "triton-latency-optimizer",
+      "description": "擅长在 Ascend NPU 平台上编写高效 Triton 算子的性能优化专家。 按照严格的顺序逐步优化 Triton 代码，每次只尝试一个优化点， 确保优化前后功能一致、精度一致。 ⚠️ 只能使用本 skill 规定的优化方式，禁止使用任何超出本 skill 之外的优化方式。 触发：当用户需要对 Ascend NPU 上的 Triton 算子代码进行性能优化、降低时延、提升吞吐时使用。",
+      "localPath": "skills/triton-latency-optimizer",
+      "sourcePath": "ops/triton-latency-optimizer",
+      "officialSkillPackages": [
+        "triton-op-generator-skills"
+      ],
+      "codexSupport": "codex-ready",
+      "notes": []
+    },
+    {
+      "name": "triton-op-coding",
+      "description": "Triton Ascend 算子代码生成 Skill — 根据算子任务格式任务描述生成高性能 Triton Ascend 内核代码。支持首次生成和基于错误反馈的迭代优化。 触发：当用户需要根据任务描述生成或迭代修复 Triton Ascend 内核代码时使用。",
+      "localPath": "skills/triton-op-coding",
+      "sourcePath": "ops/triton-op-coding",
+      "officialSkillPackages": [
+        "triton-op-generator-skills"
+      ],
+      "codexSupport": "codex-ready",
+      "notes": [
+        "requires matching Ascend/CANN environment for execution"
+      ]
+    },
+    {
+      "name": "triton-op-designer",
+      "description": "Triton Ascend 算子算法草图设计 Skill — 根据任务描述设计高质量的算法草图（sketch）， 用于指导后续代码生成。支持首次设计和基于历史上下文的迭代优化。 触发：当用户需要为 Triton Ascend 算子设计算法草图或在已有 sketch 基础上迭代时使用。",
+      "localPath": "skills/triton-op-designer",
+      "sourcePath": "ops/triton-op-designer",
+      "officialSkillPackages": [
+        "triton-op-generator-skills"
+      ],
+      "codexSupport": "codex-ready",
+      "notes": []
+    },
+    {
+      "name": "triton-op-verifier",
+      "description": "算子代码验证 Skill — 按照标准验证流程验证生成的内核代码。 创建验证项目文件，调用 scripts/verify.py 运行验证，验证通过后 调用 scripts/benchmark.py 进行性能测试并收集结果。 触发：当用户需要验证 Triton 算子代码功能正确性或采集其性能数据时使用。",
+      "localPath": "skills/triton-op-verifier",
+      "sourcePath": "ops/triton-op-verifier",
+      "officialSkillPackages": [
+        "triton-op-generator-skills"
+      ],
+      "codexSupport": "codex-ready",
+      "notes": []
+    },
+    {
+      "name": "triton-task-extractor",
+      "description": "从用户 PyTorch/Python 代码中提取算子实现，构建为算子任务格式的标准化 任务文件。支持两种模式：单 case（单一自包含 .py，get_inputs 返回单组）和 多 case（.py + 同名 .json 配对，get_input_groups 返回多组）。 触发：当用户需要将 PyTorch/Python 代码提取并转换为标准化算子任务文件时使用。",
+      "localPath": "skills/triton-task-extractor",
+      "sourcePath": "ops/triton-task-extractor",
+      "officialSkillPackages": [
+        "triton-op-generator-skills"
+      ],
+      "codexSupport": "codex-ready",
+      "notes": []
+    },
+    {
+      "name": "tune-frontend",
+      "description": "PyPTO 算子开箱性能调优技能。主要关注代码级的调优、前端写法不同导致的性能差异，包括 loop 写法优化、TileShape 设置优化、数据操作优化等。当用户需要进行算子初始开发性能优化、开箱性能调优时使用此技能。触发词：开箱性能调优、代码级优化、loop 优化、TileShape 设置、前端优化。",
+      "localPath": "skills/pypto-op-perf-tune/tune-frontend",
+      "sourcePath": "ops/pypto-op-perf-tune/tune-frontend",
+      "officialSkillPackages": [],
+      "codexSupport": "codex-ready",
+      "notes": []
+    },
+    {
+      "name": "tune-incore",
+      "description": "PyPTO 算子核内性能调优技能。通过分析单 task 的实现指令及 operation，完成核内的性能调优，包括指令级优化、核内流水优化、特殊 Shape 处理等。当用户需要进行核内性能调优、单 task 耗时分析、指令级优化时使用此技能。触发词：核内性能调优、单 task 优化、指令级优化、核内流水、Operation 实现优化。",
+      "localPath": "skills/pypto-op-perf-tune/tune-incore",
+      "sourcePath": "ops/pypto-op-perf-tune/tune-incore",
+      "officialSkillPackages": [],
+      "codexSupport": "codex-ready",
+      "notes": []
+    },
+    {
+      "name": "tune-orchestrator",
+      "description": "PyPTO 算子性能调优流程编排器。控制调优流程按固定顺序与完整迭代轮次执行、实时更新 Todo 清单。当需要编排 PyPTO 算子性能调优全流程（性能分析→调优→精度验证迭代）时使用此技能。",
+      "localPath": "skills/pypto-op-perf-tune/tune-orchestrator",
+      "sourcePath": "ops/pypto-op-perf-tune/tune-orchestrator",
+      "officialSkillPackages": [],
+      "codexSupport": "codex-ready",
+      "notes": []
+    },
+    {
+      "name": "tune-swimlane",
+      "description": "PyPTO 算子深度性能调优技能。通过泳道图分析及调优性能，包括 Stitch 调优、TileShape 深度调优、合图调优、调度策略调优等。当用户需要进行深度性能调优、泳道图分析、Stitch 优化、合图优化时使用此技能。触发词：深度性能调优、泳道图分析、Stitch 调优、合图调优、调度优化。",
+      "localPath": "skills/pypto-op-perf-tune/tune-swimlane",
+      "sourcePath": "ops/pypto-op-perf-tune/tune-swimlane",
+      "officialSkillPackages": [],
+      "codexSupport": "codex-ready",
+      "notes": []
+    }
+  ],
+  "upstreamCodexAdapterName": "codex-cannbot"
+}

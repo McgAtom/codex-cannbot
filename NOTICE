@@ -1,0 +1,14 @@
+CANNBot for Codex
+
+This repository packages standalone skills generated from the upstream CANNBot
+skills project:
+
+  https://gitcode.com/cann/cannbot-skills
+
+The packaged skill content and related materials retain the upstream CANN Open
+Software License Agreement Version 2.0 and upstream notices. This repository is
+a Codex adapter/distribution and is not the canonical upstream CANNBot project.
+
+Generated from upstream commit:
+
+  7def5becc576de40d0e13b0fddad8345e57540e0
