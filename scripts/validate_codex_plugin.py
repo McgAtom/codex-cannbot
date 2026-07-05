@@ -20,8 +20,8 @@ from collections import Counter
 from pathlib import Path
 
 
-REPO_ROOT = Path(__file__).resolve().parents[3]
 PLUGIN_ROOT = Path(__file__).resolve().parents[1]
+REPO_ROOT = PLUGIN_ROOT
 SKILLS_ROOT = PLUGIN_ROOT / "skills"
 PLUGIN_JSON = PLUGIN_ROOT / ".codex-plugin" / "plugin.json"
 MANIFEST_JSON = PLUGIN_ROOT / "skills-manifest.json"

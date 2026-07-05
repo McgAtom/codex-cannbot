@@ -9,10 +9,10 @@ source traceability in `skills-manifest.json` and `codex-compatibility.json`.
 ## Status
 
 - Plugin ID: `cannbot`
-- Version: `2026.07.05-codex.1`
+- Version: `2026.07.05-codex.2`
 - Upstream commit: `7def5becc576de40d0e13b0fddad8345e57540e0`
-- Packaged skills: 93
-- Codex compatibility: 93 `codex-ready`
+- Packaged skills: 94 (93 upstream + 1 Codex workflow adapter)
+- Codex compatibility: 94 `codex-ready`
 
 ## Scope
 
@@ -23,6 +23,7 @@ Included by default:
 - torch.compile / npugraph_ex diagnostic skills
 - model inference and model training diagnostic skills
 - Runtime migration and GitCode collaboration skills
+- Codex-native direct-invoke operator workflow adapter
 
 Excluded by default:
 
@@ -50,7 +51,7 @@ For this repository layout, the marketplace entry should point to
 ## Validate
 
 ```bash
-python3 scripts/validate_codex_plugin.py --expected-name cannbot
+make ci
 ```
 
 Expected result:
@@ -58,13 +59,28 @@ Expected result:
 ```json
 {
   "plugin": "cannbot",
-  "skillFiles": 93,
-  "uniqueSkillNames": 93,
+  "skillFiles": 94,
+  "uniqueSkillNames": 94,
   "supportCounts": {
-    "codex-ready": 93
+    "codex-ready": 94
   }
 }
 ```
+
+For a local Codex install smoke test:
+
+```bash
+make smoke-install
+```
+
+To refresh from a checked-out upstream CANNBot repository:
+
+```bash
+make sync-upstream UPSTREAM=/tmp/cannbot-skills-update
+make ci
+```
+
+The sync command preserves local `skills/cannbot-*` Codex workflow adapters.
 
 ## Repository Layout
 
@@ -77,6 +93,11 @@ docs/codex-adapter.md          # generated adapter report
 docs/official-plugin-model.md  # official CANNBot model mapped to Codex
 docs/official-plugin-comparison.md
 scripts/validate_codex_plugin.py
+scripts/sync_upstream.py
+scripts/smoke_install.sh
+tests/test_plugin_contract.py
+Makefile
+.github/workflows/ci.yml
 ```
 
 ## Upstream

@@ -1,6 +1,6 @@
 {
   "name": "cannbot",
-  "version": "2026.07.05-codex.1",
+  "version": "2026.07.05-codex.2",
   "description": "Codex-native CANNBot skills for Ascend NPU development workflows.",
   "author": {
     "name": "CANNBot",

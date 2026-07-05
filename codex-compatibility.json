@@ -1,11 +1,11 @@
 {
   "upstreamCommit": "7def5becc576de40d0e13b0fddad8345e57540e0",
-  "generatedAt": "2026-07-05T09:40:19.812362+00:00",
+  "generatedAt": "2026-07-05T13:16:55.090501+00:00",
   "patchStats": {
     "textFilesPatched": 6
   },
   "supportCounts": {
-    "codex-ready": 93
+    "codex-ready": 94
   },
   "officialMarketplace": {
     "path": ".claude-plugin/marketplace.json",
@@ -514,6 +514,15 @@
       "notes": [
         "requires matching Ascend/CANN environment for execution",
         "may install tools or access network; keep user confirmation for mutations"
+      ]
+    },
+    {
+      "name": "cannbot-ops-direct-invoke",
+      "sourcePath": "local/cannbot-ops-direct-invoke",
+      "officialSkillPackages": [],
+      "codexSupport": "codex-ready",
+      "notes": [
+        "Codex-native workflow adapter maintained in this repository"
       ]
     },
     {
