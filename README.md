@@ -19,8 +19,7 @@ Codex-native 的工作流适配器，让 Codex 能在没有本地 NPU 的机器�
 - 打包技能: 95 个，包含 93 个上游技能和 2 个 Codex 工作流适配器
 - Codex 兼容性: 95 个 `codex-ready`
 - 默认运行模式: `offline-no-local-npu`
-- 企业级工作流: 1 个 `workflow-enterprise`
-- 预览工作流: 1 个 `workflow-preview`
+- 引导型工作流: 2 个 `guided-workflow`
 
 ### 核心运行模型
 
@@ -86,15 +85,12 @@ Codex 会在需要专业信息提炼、诊断、设计、生成、审查或调�
 - Runtime migration 和 GitCode 协作技能
 - Codex-native direct-invoke 算子工作流适配器
 
-当前企业级工作流：
+当前引导型工作流：
 
-- `ops-direct-invoke`: `workflow-enterprise`
+- `ops-direct-invoke`: `guided-workflow`
   - 状态文件: `.cannbot/ops-direct-invoke/state.json`
   - 外部证据目录: `.cannbot/ops-direct-invoke/evidence/`
-
-当前预览工作流：
-
-- `ops-registry-invoke`: `workflow-preview`
+- `ops-registry-invoke`: `guided-workflow`
   - 状态文件: `.cannbot/ops-registry-invoke/state.json`
   - 外部证据目录: `.cannbot/ops-registry-invoke/evidence/`
   - 覆盖完整自定义算子工程、OpDef、ACLNN/API 集成、UT/ST 设计和外部证据分析
@@ -110,8 +106,7 @@ Codex 会在需要专业信息提炼、诊断、设计、生成、审查或调�
 ### 支持级别
 
 - `skill-ready`: standalone 技能已经打包；当用户请求相关主题或 Codex 识别到需要专业信息时按需调用。
-- `workflow-preview`: 场景适配器存在，但 artifact gates 和离线回归覆盖还未达到企业级。
-- `workflow-enterprise`: 场景适配器已进入 `adapter-registry.json`，并具备状态契约、证据契约、失败路由、文档和 CI 契约测试。
+- `guided-workflow`: 场景已进入 `adapter-registry.json`，Codex 可按任务选择推荐 skill；状态文件和 evidence 目录是长任务建议，不是每次强制。
 
 ### 不包含什么
 
@@ -145,8 +140,7 @@ make ci
     "codex-ready": 95
   },
   "adapterScenarios": {
-    "workflow-enterprise": 1,
-    "workflow-preview": 1
+    "guided-workflow": 2
   }
 }
 ```
@@ -211,8 +205,7 @@ adapter and distribution. Source traceability is recorded in
 - Packaged skills: 95, including 93 upstream skills and 2 Codex workflow adapters
 - Codex compatibility: 95 `codex-ready`
 - Default runtime: `offline-no-local-npu`
-- Enterprise workflows: 1 `workflow-enterprise`
-- Preview workflows: 1 `workflow-preview`
+- Guided workflows: 2 `guided-workflow`
 
 ### Runtime Model
 
@@ -282,15 +275,12 @@ Included by default:
 - runtime migration and GitCode collaboration skills
 - Codex-native direct-invoke operator workflow adapter
 
-Current enterprise workflow:
+Current guided workflows:
 
-- `ops-direct-invoke`: `workflow-enterprise`
+- `ops-direct-invoke`: `guided-workflow`
   - State path: `.cannbot/ops-direct-invoke/state.json`
   - Evidence path: `.cannbot/ops-direct-invoke/evidence/`
-
-Current preview workflow:
-
-- `ops-registry-invoke`: `workflow-preview`
+- `ops-registry-invoke`: `guided-workflow`
   - State path: `.cannbot/ops-registry-invoke/state.json`
   - Evidence path: `.cannbot/ops-registry-invoke/evidence/`
   - Covers full custom operator projects, OpDef, ACLNN/API integration, UT/ST design, and external evidence analysis
@@ -306,10 +296,9 @@ External evidence can include:
 ### Support Levels
 
 - `skill-ready`: standalone skills are packaged and invoked on demand.
-- `workflow-preview`: a scenario adapter exists but is not yet enterprise complete.
-- `workflow-enterprise`: a scenario adapter is listed in `adapter-registry.json`
-  and has a state contract, evidence contract, failure routing, documentation,
-  and CI-enforced contract tests.
+- `guided-workflow`: a scenario is listed in `adapter-registry.json`; Codex can
+  select recommended skills on demand. State and evidence paths are suggested
+  for long-running tasks, not mandatory for every request.
 
 ### What Is Not Included
 
@@ -345,8 +334,7 @@ Expected output includes:
     "codex-ready": 95
   },
   "adapterScenarios": {
-    "workflow-enterprise": 1,
-    "workflow-preview": 1
+    "guided-workflow": 2
   }
 }
 ```

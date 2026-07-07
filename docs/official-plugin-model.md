@@ -82,8 +82,9 @@ The next layer should adapt official development teams one by one:
   hooks for long-running optimization tasks.
 - `torch-compile`: npugraph_ex guidance and diagnosis flow.
 
-Each adapter should define a Codex-native workflow document, state file schema,
-artifact gates, validation tests, and a real `codex plugin add` smoke test.
-Enterprise adapters must also be listed in `adapter-registry.json` and must
+Each adapter should define concise Codex-native guidance, recommended skills,
+optional state/evidence paths for long-running tasks, validation tests, and a
+real `codex plugin add` smoke test.
+Guided workflow adapters should be listed in `adapter-registry.json` and should
 route user-provided evidence from `.cannbot/<scenario>/evidence/` to the
-appropriate diagnostic or tuning skills.
+appropriate diagnostic or tuning skills without forcing a heavy stage machine.

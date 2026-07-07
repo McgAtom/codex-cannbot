@@ -11,7 +11,7 @@ This document compares the official CANNBot plugins with this Codex adapter.
   skills and 2 local Codex workflow adapters
 - Adapter registry: `adapter-registry.json`
 - Default runtime: `offline-no-local-npu`
-- Enterprise support level: `workflow-enterprise`
+- Scenario support level: `guided-workflow`
 
 ## What Official Plugins Do Well
 
@@ -70,8 +70,8 @@ Codex adapter implication:
 
 - Add Codex-native workflow documents for high-value scenarios.
 - Use file-backed state and artifacts instead of relying on chat history.
-- Start with `ops-direct-invoke` as the `workflow-enterprise` reference
-  adapter.
+- Keep scenario adapters lightweight. Codex should use them as routing guidance,
+  not as mandatory stage machines.
 - Treat missing local NPU hardware as the normal `offline-no-local-npu`
   runtime. When external board-side evidence is still missing, state must
   remain `awaiting_external_npu_evidence`.
@@ -116,10 +116,10 @@ Codex adapter implication:
 
 Current Codex adapter registry coverage:
 
-- `ops-direct-invoke`: `workflow-enterprise`, state path
+- `ops-direct-invoke`: `guided-workflow`, state path
   `.cannbot/ops-direct-invoke/state.json`, evidence path
   `.cannbot/ops-direct-invoke/evidence/`
-- `ops-registry-invoke`: `workflow-preview`, state path
+- `ops-registry-invoke`: `guided-workflow`, state path
   `.cannbot/ops-registry-invoke/state.json`, evidence path
   `.cannbot/ops-registry-invoke/evidence/`
 
@@ -128,7 +128,7 @@ Current Codex adapter registry coverage:
 | Plugin metadata | Per-product plugin metadata with dependencies and agents | Single Codex plugin metadata | Need scenario-level adapters |
 | Skills | Curated skill packages | 95 skills total, including 93 upstream standalone skills and 2 local Codex workflow adapters | Good base layer |
 | Agents | Primary and specialist subagents | None | Major gap |
-| Workflows | Explicit stage machines and artifact gates | `ops-direct-invoke` has a `workflow-enterprise` Codex adapter; `ops-registry-invoke` has a `workflow-preview` adapter; other teams remain skill-only | Major gap remains outside the first two adapters |
+| Workflows | Explicit stage machines and artifact gates | `ops-direct-invoke` and `ops-registry-invoke` have lightweight `guided-workflow` adapters; other teams remain skill-only | Keep adapters lightweight unless a task truly needs state |
 | Hooks | Session and tool-use hooks | None | Medium gap; Codex support must be checked before implementing |
 | Installer | Tool-specific `init.sh` and manifest | Codex plugin install/cache | Acceptable for Codex |
 | Dependency tests | DG-01 to DG-11 | Local static validator plus adapter registry checks | Need broader scenario regression coverage |
@@ -137,23 +137,22 @@ Current Codex adapter registry coverage:
 
 ## Recommended Roadmap
 
-1. Keep `ops-direct-invoke` as the enterprise reference adapter.
-2. Promote `ops-registry-invoke` from `workflow-preview` to
-   `workflow-enterprise` after adding offline regression fixtures for custom
-   operator build, runtime, precision, and UT/ST evidence loops.
+1. Keep `adapter-registry.json` as a lightweight scenario router.
+2. Avoid adding long workflow documents unless a scenario genuinely needs
+   resumable state.
 3. Add user-evidence regression fixtures for build, runtime, precision, and
    performance feedback loops.
 4. Promote `pypto-op-orchestrator` to the next Codex workflow adapter.
 5. Add `triton-op-generator`, `tilelang-op-orchestrator`, `model-infer-optimize`,
-   and `torch-compile` adapters using the same contract.
+   and `torch-compile` entries only as lightweight guided workflows first.
 6. Add task-level regression prompts for Ascend C, PyPTO, Triton, and model
    diagnostics.
 
 ## Current Positioning
 
 This repository is a single Codex-native CANNBot plugin with a broad
-`skill-ready` base, a `workflow-enterprise` adapter for `ops-direct-invoke`,
-and a `workflow-preview` adapter for `ops-registry-invoke`. It is not yet a
-full Codex-native implementation of every official CANNBot team plugin. The
-correct next step is to preserve the working skill distribution and add
-workflow adapters incrementally.
+`skill-ready` base and lightweight `guided-workflow` entries for
+`ops-direct-invoke` and `ops-registry-invoke`. It intentionally does not copy
+every official CANNBot team workflow. The correct next step is to preserve the
+working skill distribution and add only minimal routing guidance where Codex
+needs it.

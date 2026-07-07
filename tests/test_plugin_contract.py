@@ -59,16 +59,14 @@ class PluginContractTests(unittest.TestCase):
             "name: cannbot-ops-direct-invoke",
             "x-codex-adapter: true",
             ".cannbot/ops-direct-invoke/state.json",
-            "environment.md",
-            "DESIGN.md",
-            "PLAN.md",
-            "REVIEW.md",
+            ".cannbot/ops-direct-invoke/evidence/",
+            "offline-no-local-npu",
             "ascendc-env-check",
             "ascendc-direct-invoke-template",
         ]:
             self.assertIn(required, text)
 
-    def test_enterprise_adapter_registry_contract(self):
+    def test_guided_adapter_registry_contract(self):
         registry_path = ROOT / "adapter-registry.json"
         self.assertTrue(registry_path.exists(), "missing adapter registry")
         registry = json.loads(registry_path.read_text(encoding="utf-8"))
@@ -79,7 +77,7 @@ class PluginContractTests(unittest.TestCase):
         self.assertIn("ops-direct-invoke", scenarios)
         scenario = scenarios["ops-direct-invoke"]
         self.assertEqual(scenario["adapterSkill"], "cannbot-ops-direct-invoke")
-        self.assertEqual(scenario["maturity"], "workflow-enterprise")
+        self.assertEqual(scenario["maturity"], "guided-workflow")
         self.assertEqual(scenario["statePath"], ".cannbot/ops-direct-invoke/state.json")
         self.assertEqual(scenario["evidencePath"], ".cannbot/ops-direct-invoke/evidence/")
         self.assertIn("ascendc-runtime-debug", scenario["referencedSkills"])
@@ -93,7 +91,7 @@ class PluginContractTests(unittest.TestCase):
 
         registry_invoke = scenarios["ops-registry-invoke"]
         self.assertEqual(registry_invoke["adapterSkill"], "cannbot-ops-registry-invoke")
-        self.assertEqual(registry_invoke["maturity"], "workflow-preview")
+        self.assertEqual(registry_invoke["maturity"], "guided-workflow")
         self.assertEqual(registry_invoke["statePath"], ".cannbot/ops-registry-invoke/state.json")
         self.assertEqual(registry_invoke["evidencePath"], ".cannbot/ops-registry-invoke/evidence/")
         for skill in [
@@ -104,11 +102,11 @@ class PluginContractTests(unittest.TestCase):
         ]:
             self.assertIn(skill, registry_invoke["referencedSkills"])
 
-    def test_enterprise_positioning_is_documented(self):
+    def test_guided_positioning_is_documented(self):
         required = [
             "adapter-registry.json",
             "offline-no-local-npu",
-            "workflow-enterprise",
+            "guided-workflow",
             "awaiting_external_npu_evidence",
         ]
         for path in [
@@ -123,7 +121,7 @@ class PluginContractTests(unittest.TestCase):
     def test_operator_development_coverage_is_documented(self):
         required = [
             "ops-registry-invoke",
-            "workflow-preview",
+            "guided-workflow",
             ".cannbot/ops-registry-invoke/state.json",
             ".cannbot/ops-registry-invoke/evidence/",
         ]
@@ -148,7 +146,7 @@ class PluginContractTests(unittest.TestCase):
         ]:
             self.assertIn(token, text)
 
-    def test_validator_enforces_enterprise_adapter_contract(self):
+    def test_validator_enforces_guided_adapter_contract(self):
         result = subprocess.run(
             [sys.executable, "scripts/validate_codex_plugin.py", "--expected-name", "cannbot"],
             cwd=ROOT,
@@ -158,7 +156,7 @@ class PluginContractTests(unittest.TestCase):
         )
         self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
         payload = json.loads(result.stdout)
-        self.assertEqual(payload["adapterScenarios"]["workflow-enterprise"], 1)
+        self.assertEqual(payload["adapterScenarios"]["guided-workflow"], 2)
 
     def test_release_docs_match_current_plugin_metadata(self):
         plugin = json.loads((ROOT / ".codex-plugin" / "plugin.json").read_text(encoding="utf-8"))

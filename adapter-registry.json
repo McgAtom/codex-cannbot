@@ -7,7 +7,7 @@
       "id": "ops-direct-invoke",
       "officialTeam": "ops-direct-invoke",
       "adapterSkill": "cannbot-ops-direct-invoke",
-      "maturity": "workflow-enterprise",
+      "maturity": "guided-workflow",
       "statePath": ".cannbot/ops-direct-invoke/state.json",
       "evidencePath": ".cannbot/ops-direct-invoke/evidence/",
       "referencedSkills": [
@@ -33,7 +33,7 @@
       "id": "ops-registry-invoke",
       "officialTeam": "ops-registry-invoke",
       "adapterSkill": "cannbot-ops-registry-invoke",
-      "maturity": "workflow-preview",
+      "maturity": "guided-workflow",
       "statePath": ".cannbot/ops-registry-invoke/state.json",
       "evidencePath": ".cannbot/ops-registry-invoke/evidence/",
       "referencedSkills": [

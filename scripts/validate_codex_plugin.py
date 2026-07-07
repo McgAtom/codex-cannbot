@@ -34,16 +34,11 @@ FORBIDDEN_TEXT = (
     "pypto/.agents/skills",
 )
 ADAPTER_REQUIRED_SECTIONS = (
-    "## Trigger Scope",
-    "## Non Goals",
-    "## State And Evidence",
+    "## When To Use",
     "## Skill Routing",
-    "## Stages",
-    "## Artifact Gates",
-    "## Failure Routing",
-    "## Acceptance Standard",
+    "## Evidence Handoff",
 )
-ADAPTER_MATURITIES = {"workflow-preview", "workflow-enterprise"}
+ADAPTER_MATURITIES = {"guided-workflow"}
 
 
 def load_json(path: Path) -> dict:

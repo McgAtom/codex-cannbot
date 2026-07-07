@@ -7,7 +7,7 @@
 - Support counts: `{'codex-ready': 95}`
 - Adapter registry: `adapter-registry.json`
 - Default runtime: `offline-no-local-npu`
-- Workflow adapters: `{'workflow-enterprise': 1, 'workflow-preview': 1}`
+- Workflow adapters: `{'guided-workflow': 2}`
 - Experimental included: `False`
 
 ## Default Scope
@@ -30,12 +30,11 @@ workflow needs specialized diagnosis, design, generation, review, or tuning.
 ## Support Levels
 
 - `skill-ready`: packaged standalone skills, invoked on demand.
-- `workflow-preview`: Codex adapter exists but is not yet enterprise complete.
-- `workflow-enterprise`: adapter is listed in `adapter-registry.json` and has
-  CI-enforced state, evidence, artifact, routing, and documentation contracts.
+- `guided-workflow`: scenario is listed in `adapter-registry.json`; Codex uses
+  it as lightweight routing guidance and invokes relevant skills on demand.
+  State and evidence paths are suggested for long-running tasks.
 
-Current `workflow-enterprise` scenario: `ops-direct-invoke`.
-Current `workflow-preview` scenario: `ops-registry-invoke`.
+Current `guided-workflow` scenarios: `ops-direct-invoke`, `ops-registry-invoke`.
 
 ## Official Marketplace Coverage
 
