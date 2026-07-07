@@ -6,8 +6,12 @@ This document compares the official CANNBot plugins with this Codex adapter.
 
 - Official upstream: `https://gitcode.com/cann/cannbot-skills`
 - Compared upstream commit: `7def5becc576de40d0e13b0fddad8345e57540e0`
-- This adapter version: `2026.07.05-codex.1`
-- This adapter packages: 93 standalone skills
+- This adapter version: `2026.07.05-codex.2`
+- This adapter packages: 94 skills total, including 93 upstream standalone
+  skills and 1 local Codex workflow adapter
+- Adapter registry: `adapter-registry.json`
+- Default runtime: `offline-no-local-npu`
+- Enterprise support level: `workflow-enterprise`
 
 ## What Official Plugins Do Well
 
@@ -45,8 +49,11 @@ available skill.
 Codex adapter implication:
 
 - Keep the current all-skills bundle as the base package.
-- Add scenario adapters for the official products one by one.
+- Add scenario adapters for the official products one by one inside the single
+  `cannbot` plugin.
 - Do not claim end-to-end workflow support until the scenario adapter exists.
+- Use `adapter-registry.json` to declare each adapter's maturity, state path,
+  evidence path, and referenced skill closure.
 
 ### Orchestration Contract
 
@@ -63,8 +70,11 @@ Codex adapter implication:
 
 - Add Codex-native workflow documents for high-value scenarios.
 - Use file-backed state and artifacts instead of relying on chat history.
-- Start with one workflow, likely `ops-direct-invoke` or
-  `pypto-op-orchestrator`.
+- Start with `ops-direct-invoke` as the `workflow-enterprise` reference
+  adapter.
+- Treat missing local NPU hardware as the normal `offline-no-local-npu`
+  runtime. When external board-side evidence is still missing, state must
+  remain `awaiting_external_npu_evidence`.
 
 ### Dependency Closure
 
@@ -107,28 +117,30 @@ Codex adapter implication:
 | Area | Official CANNBot | Current Codex Adapter | Gap |
 | --- | --- | --- | --- |
 | Plugin metadata | Per-product plugin metadata with dependencies and agents | Single Codex plugin metadata | Need scenario-level adapters |
-| Skills | Curated skill packages | 93 standalone skills | Good base layer |
+| Skills | Curated skill packages | 94 skills total, including 93 upstream standalone skills and 1 local Codex workflow adapter | Good base layer |
 | Agents | Primary and specialist subagents | None | Major gap |
-| Workflows | Explicit stage machines and artifact gates | None for end-to-end teams | Major gap |
+| Workflows | Explicit stage machines and artifact gates | `ops-direct-invoke` has a `workflow-enterprise` Codex adapter; other teams remain skill-only | Major gap remains outside the first adapter |
 | Hooks | Session and tool-use hooks | None | Medium gap; Codex support must be checked before implementing |
 | Installer | Tool-specific `init.sh` and manifest | Codex plugin install/cache | Acceptable for Codex |
-| Dependency tests | DG-01 to DG-11 | Local static validator | Need CI and dependency drift checks |
-| Runtime tests | Behavior/integration/ST evals | Not implemented | Major gap |
-| Upstream sync | Official repo is canonical | Manual generated snapshot | Need update script and release process |
+| Dependency tests | DG-01 to DG-11 | Local static validator plus adapter registry checks | Need broader scenario regression coverage |
+| Runtime tests | Behavior/integration/ST evals | Offline workflow contracts only; local NPU is not required | Need user-evidence regression fixtures |
+| Upstream sync | Official repo is canonical | `sync_upstream.py` preserves local Codex adapters | Need release checklist automation |
 
 ## Recommended Roadmap
 
-1. Add GitHub Actions for static validation.
-2. Add an update script that regenerates the plugin from upstream CANNBot.
-3. Add a manifest drift check so generated files cannot go stale.
-4. Build a Codex-native `ops-direct-invoke` workflow adapter.
-5. Add install smoke tests that exercise `codex plugin add cannbot@local`.
-6. Add task-level regression prompts for Ascend C, PyPTO, Triton, and model
+1. Keep `ops-direct-invoke` as the enterprise reference adapter.
+2. Add user-evidence regression fixtures for build, runtime, precision, and
+   performance feedback loops.
+3. Promote `pypto-op-orchestrator` to the next Codex workflow adapter.
+4. Add `triton-op-generator`, `tilelang-op-orchestrator`, `model-infer-optimize`,
+   `torch-compile`, and `ops-registry-invoke` adapters using the same contract.
+5. Add task-level regression prompts for Ascend C, PyPTO, Triton, and model
    diagnostics.
 
 ## Current Positioning
 
-This repository is currently a Codex-native CANNBot skill distribution. It is
-not yet a full Codex-native implementation of the official CANNBot team
-plugins. The correct next step is to preserve the working skill distribution
-and add workflow adapters incrementally.
+This repository is a single Codex-native CANNBot plugin with a broad
+`skill-ready` base and an initial `workflow-enterprise` adapter for
+`ops-direct-invoke`. It is not yet a full Codex-native implementation of every
+official CANNBot team plugin. The correct next step is to preserve the working
+skill distribution and add workflow adapters incrementally.

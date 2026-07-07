@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "plugin": "cannbot",
+  "defaultRuntime": "offline-no-local-npu",
+  "scenarios": [
+    {
+      "id": "ops-direct-invoke",
+      "officialTeam": "ops-direct-invoke",
+      "adapterSkill": "cannbot-ops-direct-invoke",
+      "maturity": "workflow-enterprise",
+      "statePath": ".cannbot/ops-direct-invoke/state.json",
+      "evidencePath": ".cannbot/ops-direct-invoke/evidence/",
+      "referencedSkills": [
+        "aiss-tiling-solver",
+        "ascendc-api-best-practices",
+        "ascendc-code-review",
+        "ascendc-crash-debug",
+        "ascendc-direct-invoke-template",
+        "ascendc-docs-search",
+        "ascendc-env-check",
+        "ascendc-perf-optimize",
+        "ascendc-precision-debug",
+        "ascendc-runtime-debug",
+        "ascendc-tiling-design",
+        "npu-arch",
+        "ops-precision-standard",
+        "ops-profiling",
+        "ops-simulator",
+        "ops-spec-gen"
+      ]
+    }
+  ]
+}

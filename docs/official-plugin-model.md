@@ -33,6 +33,12 @@ The generated manifest records each skill's canonical source path and the
 official marketplace skill package names that contain it. This keeps the Codex
 bundle auditable against the official product registry.
 
+Codex workflow adapters are declared separately in `adapter-registry.json`.
+The registry records scenario id, adapter skill, maturity, state path, evidence
+path, and referenced skill closure. The default runtime is
+`offline-no-local-npu`: Codex performs off-board development and analyzes
+external NPU evidence provided by the user.
+
 ## What Codex Must Not Copy Blindly
 
 The official `plugins-official/*` directories are tool applications, not
@@ -53,6 +59,9 @@ contract while using Codex-native capabilities.
 - Official marketplace dependencies are recorded for audit and update review.
 - Team/workflow plugins require explicit Codex workflow adapters before they are
   enabled as orchestrated products.
+- Adapters must not require local NPU hardware. Missing board-side execution
+  evidence is represented as `awaiting_external_npu_evidence`, not as a local
+  environment failure.
 - Local flat skill fallbacks under `~/.codex/skills` should not be used for
   CANNBot once the plugin is installed.
 
@@ -75,3 +84,6 @@ The next layer should adapt official development teams one by one:
 
 Each adapter should define a Codex-native workflow document, state file schema,
 artifact gates, validation tests, and a real `codex plugin add` smoke test.
+Enterprise adapters must also be listed in `adapter-registry.json` and must
+route user-provided evidence from `.cannbot/<scenario>/evidence/` to the
+appropriate diagnostic or tuning skills.
