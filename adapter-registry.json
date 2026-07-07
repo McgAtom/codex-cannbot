@@ -28,6 +28,35 @@
         "ops-simulator",
         "ops-spec-gen"
       ]
+    },
+    {
+      "id": "ops-registry-invoke",
+      "officialTeam": "ops-registry-invoke",
+      "adapterSkill": "cannbot-ops-registry-invoke",
+      "maturity": "workflow-preview",
+      "statePath": ".cannbot/ops-registry-invoke/state.json",
+      "evidencePath": ".cannbot/ops-registry-invoke/evidence/",
+      "referencedSkills": [
+        "ascendc-api-best-practices",
+        "ascendc-blaze-best-practice",
+        "ascendc-code-review",
+        "ascendc-crash-debug",
+        "ascendc-docs-gen",
+        "ascendc-docs-search",
+        "ascendc-env-check",
+        "ascendc-performance-best-practices",
+        "ascendc-precision-debug",
+        "ascendc-regbase-best-practice",
+        "ascendc-registry-invoke-template",
+        "ascendc-runtime-debug",
+        "ascendc-st-design",
+        "ascendc-tiling-design",
+        "ascendc-ut-develop",
+        "npu-arch",
+        "ops-precision-standard",
+        "ops-profiling",
+        "ops-spec-gen"
+      ]
     }
   ]
 }

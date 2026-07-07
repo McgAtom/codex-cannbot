@@ -16,10 +16,11 @@ Codex-native 的工作流适配器，让 Codex 能在没有本地 NPU 的机器�
 - 插件 ID: `cannbot`
 - 版本: `2026.07.05-codex.2`
 - 上游提交: `7def5becc576de40d0e13b0fddad8345e57540e0`
-- 打包技能: 94 个，包含 93 个上游技能和 1 个 Codex 工作流适配器
-- Codex 兼容性: 94 个 `codex-ready`
+- 打包技能: 95 个，包含 93 个上游技能和 2 个 Codex 工作流适配器
+- Codex 兼容性: 95 个 `codex-ready`
 - 默认运行模式: `offline-no-local-npu`
 - 企业级工作流: 1 个 `workflow-enterprise`
+- 预览工作流: 1 个 `workflow-preview`
 
 ### 核心运行模型
 
@@ -91,6 +92,13 @@ Codex 会在需要专业信息提炼、诊断、设计、生成、审查或调�
   - 状态文件: `.cannbot/ops-direct-invoke/state.json`
   - 外部证据目录: `.cannbot/ops-direct-invoke/evidence/`
 
+当前预览工作流：
+
+- `ops-registry-invoke`: `workflow-preview`
+  - 状态文件: `.cannbot/ops-registry-invoke/state.json`
+  - 外部证据目录: `.cannbot/ops-registry-invoke/evidence/`
+  - 覆盖完整自定义算子工程、OpDef、ACLNN/API 集成、UT/ST 设计和外部证据分析
+
 外部证据可以包括：
 
 - build: 编译日志、CMake 输出、include/library 错误
@@ -131,13 +139,14 @@ make ci
 ```json
 {
   "plugin": "cannbot",
-  "skillFiles": 94,
-  "uniqueSkillNames": 94,
+  "skillFiles": 95,
+  "uniqueSkillNames": 95,
   "supportCounts": {
-    "codex-ready": 94
+    "codex-ready": 95
   },
   "adapterScenarios": {
-    "workflow-enterprise": 1
+    "workflow-enterprise": 1,
+    "workflow-preview": 1
   }
 }
 ```
@@ -199,10 +208,11 @@ adapter and distribution. Source traceability is recorded in
 - Plugin ID: `cannbot`
 - Version: `2026.07.05-codex.2`
 - Upstream commit: `7def5becc576de40d0e13b0fddad8345e57540e0`
-- Packaged skills: 94, including 93 upstream skills and 1 Codex workflow adapter
-- Codex compatibility: 94 `codex-ready`
+- Packaged skills: 95, including 93 upstream skills and 2 Codex workflow adapters
+- Codex compatibility: 95 `codex-ready`
 - Default runtime: `offline-no-local-npu`
 - Enterprise workflows: 1 `workflow-enterprise`
+- Preview workflows: 1 `workflow-preview`
 
 ### Runtime Model
 
@@ -278,6 +288,13 @@ Current enterprise workflow:
   - State path: `.cannbot/ops-direct-invoke/state.json`
   - Evidence path: `.cannbot/ops-direct-invoke/evidence/`
 
+Current preview workflow:
+
+- `ops-registry-invoke`: `workflow-preview`
+  - State path: `.cannbot/ops-registry-invoke/state.json`
+  - Evidence path: `.cannbot/ops-registry-invoke/evidence/`
+  - Covers full custom operator projects, OpDef, ACLNN/API integration, UT/ST design, and external evidence analysis
+
 External evidence can include:
 
 - build: compiler logs, CMake output, include/library errors
@@ -322,13 +339,14 @@ Expected output includes:
 ```json
 {
   "plugin": "cannbot",
-  "skillFiles": 94,
-  "uniqueSkillNames": 94,
+  "skillFiles": 95,
+  "uniqueSkillNames": 95,
   "supportCounts": {
-    "codex-ready": 94
+    "codex-ready": 95
   },
   "adapterScenarios": {
-    "workflow-enterprise": 1
+    "workflow-enterprise": 1,
+    "workflow-preview": 1
   }
 }
 ```

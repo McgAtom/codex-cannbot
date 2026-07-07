@@ -5,7 +5,7 @@
     "textFilesPatched": 6
   },
   "supportCounts": {
-    "codex-ready": 94
+    "codex-ready": 95
   },
   "officialMarketplace": {
     "path": ".claude-plugin/marketplace.json",
@@ -519,6 +519,15 @@
     {
       "name": "cannbot-ops-direct-invoke",
       "sourcePath": "local/cannbot-ops-direct-invoke",
+      "officialSkillPackages": [],
+      "codexSupport": "codex-ready",
+      "notes": [
+        "Codex-native workflow adapter maintained in this repository"
+      ]
+    },
+    {
+      "name": "cannbot-ops-registry-invoke",
+      "sourcePath": "local/cannbot-ops-registry-invoke",
       "officialSkillPackages": [],
       "codexSupport": "codex-ready",
       "notes": [

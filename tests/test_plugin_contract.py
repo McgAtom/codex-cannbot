@@ -85,6 +85,25 @@ class PluginContractTests(unittest.TestCase):
         self.assertIn("ascendc-runtime-debug", scenario["referencedSkills"])
         self.assertIn("ascendc-precision-debug", scenario["referencedSkills"])
 
+    def test_operator_development_scenarios_are_declared(self):
+        registry = json.loads((ROOT / "adapter-registry.json").read_text(encoding="utf-8"))
+        scenarios = {item["id"]: item for item in registry["scenarios"]}
+        self.assertIn("ops-direct-invoke", scenarios)
+        self.assertIn("ops-registry-invoke", scenarios)
+
+        registry_invoke = scenarios["ops-registry-invoke"]
+        self.assertEqual(registry_invoke["adapterSkill"], "cannbot-ops-registry-invoke")
+        self.assertEqual(registry_invoke["maturity"], "workflow-preview")
+        self.assertEqual(registry_invoke["statePath"], ".cannbot/ops-registry-invoke/state.json")
+        self.assertEqual(registry_invoke["evidencePath"], ".cannbot/ops-registry-invoke/evidence/")
+        for skill in [
+            "ascendc-registry-invoke-template",
+            "ascendc-st-design",
+            "ascendc-ut-develop",
+            "ascendc-performance-best-practices",
+        ]:
+            self.assertIn(skill, registry_invoke["referencedSkills"])
+
     def test_enterprise_positioning_is_documented(self):
         required = [
             "adapter-registry.json",
@@ -95,6 +114,21 @@ class PluginContractTests(unittest.TestCase):
         for path in [
             ROOT / "README.md",
             ROOT / "docs" / "codex-adapter.md",
+            ROOT / "docs" / "official-plugin-comparison.md",
+        ]:
+            text = path.read_text(encoding="utf-8")
+            for token in required:
+                self.assertIn(token, text, str(path))
+
+    def test_operator_development_coverage_is_documented(self):
+        required = [
+            "ops-registry-invoke",
+            "workflow-preview",
+            ".cannbot/ops-registry-invoke/state.json",
+            ".cannbot/ops-registry-invoke/evidence/",
+        ]
+        for path in [
+            ROOT / "README.md",
             ROOT / "docs" / "official-plugin-comparison.md",
         ]:
             text = path.read_text(encoding="utf-8")

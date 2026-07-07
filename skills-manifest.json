@@ -558,6 +558,17 @@
       ]
     },
     {
+      "name": "cannbot-ops-registry-invoke",
+      "description": "Codex-native workflow-preview adapter for offline Ascend C registry-invoke custom operator development with OpDef, ACLNN/API integration, UT/ST design, external NPU evidence analysis, and resumable progress.",
+      "localPath": "skills/cannbot-ops-registry-invoke",
+      "sourcePath": "local/cannbot-ops-registry-invoke",
+      "officialSkillPackages": [],
+      "codexSupport": "codex-ready",
+      "notes": [
+        "Codex-native workflow adapter maintained in this repository"
+      ]
+    },
+    {
       "name": "cannbot-skill-reviewer",
       "description": "审查新提交或修改的 CANNBot Skill 是否符合入库质量要求。当用户需要评审 SKILL.md、检查新增 cannbot skill、审查 GitCode PR 中的技能变更、验证测试/开发/NPU/Ascend 相关 skill 是否合格时使用；输出结构门禁、九维评分、阻塞问题和可执行整改建议。",
       "localPath": "skills/cannbot-skill-reviewer",

@@ -3,11 +3,11 @@
 - Upstream commit: `7def5becc576de40d0e13b0fddad8345e57540e0`
 - Adapter version: `2026.07.05-codex.2`
 - Generated at: `2026-07-05T13:16:55.090501+00:00`
-- Skills packaged: `94`
-- Support counts: `{'codex-ready': 94}`
+- Skills packaged: `95`
+- Support counts: `{'codex-ready': 95}`
 - Adapter registry: `adapter-registry.json`
 - Default runtime: `offline-no-local-npu`
-- Enterprise workflow adapters: `{'workflow-enterprise': 1}`
+- Workflow adapters: `{'workflow-enterprise': 1, 'workflow-preview': 1}`
 - Experimental included: `False`
 
 ## Default Scope
@@ -35,6 +35,7 @@ workflow needs specialized diagnosis, design, generation, review, or tuning.
   CI-enforced state, evidence, artifact, routing, and documentation contracts.
 
 Current `workflow-enterprise` scenario: `ops-direct-invoke`.
+Current `workflow-preview` scenario: `ops-registry-invoke`.
 
 ## Official Marketplace Coverage
 

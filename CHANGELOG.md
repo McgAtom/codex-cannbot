@@ -3,10 +3,10 @@
 ## 2026.07.05-codex.2
 
 - Add Codex-native `cannbot-ops-direct-invoke` workflow adapter foundation.
-- Package 94 skills total: 93 upstream standalone skills plus 1 local Codex
-  workflow adapter.
+- Package 95 skills total: 93 upstream standalone skills plus 2 local Codex
+  workflow adapters.
 - Add `adapter-registry.json` with `offline-no-local-npu` runtime semantics and
-  one `workflow-enterprise` adapter.
+  one `workflow-enterprise` adapter plus one `workflow-preview` adapter.
 - Clarify external NPU evidence handling with `awaiting_external_npu_evidence`
   status for off-board workflows.
 - Harden plugin contract, upstream sync, validator edge-case, and local install
